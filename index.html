@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Planta de &Aacute;cido Sulf&uacute;rico 500 TPD - HAZID &amp; Dise&ntilde;o Inherentemente Seguro</title>
+  <title>Planta de &Aacute;cido Sulf&uacute;rico 500 TPD - HAZID, FMEA &amp; Dise&ntilde;o Inherentemente Seguro</title>
   <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap');
@@ -27,8 +27,8 @@
     .font-mono-code { font-family: 'JetBrains Mono', monospace; }
     .drawer-active { transform: translateX(0%); }
     .drawer-hidden { transform: translateX(100%); }
-    .hazid-table th { background-color: #0b3d23; color: #ffffff; font-weight: 700; font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.05em; padding: 10px 8px; }
-    .hazid-table td { font-size: 0.80rem; padding: 10px 8px; border-bottom: 1px solid #e2e8f0; vertical-align: top; }
+    .hazid-table th { background-color: #0b3d23; color: #ffffff; font-weight: 700; font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.05em; padding: 9px 7px; }
+    .hazid-table td { font-size: 0.79rem; padding: 8px 7px; border-bottom: 1px solid #e2e8f0; vertical-align: top; }
     .hazid-table tr:hover { background-color: #f8fafc; }
     .badge-high { background-color: #fee2e2; color: #b91c1c; border: 1px solid #f87171; }
     .badge-med { background-color: #fef3c7; color: #b45309; border: 1px solid #fcd34d; }
@@ -38,17 +38,17 @@
 <body class="min-h-screen flex flex-col justify-between">
   <!-- HEADER -->
   <header class="bg-[#0b3d23] text-white sticky top-0 z-40 border-b-2 border-[#e5a93b] shadow-md">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-2.5 flex items-center justify-between">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-2 flex items-center justify-between">
       <div class="flex items-center space-x-3.5">
-        <div class="w-11 h-11 rounded-full bg-white p-0.5 border-2 border-[#e5a93b] flex items-center justify-center flex-shrink-0 shadow overflow-hidden">
+        <div class="w-10 h-10 rounded-full bg-white p-0.5 border-2 border-[#e5a93b] flex items-center justify-center flex-shrink-0 shadow overflow-hidden">
           <img id="headerLogoImg" alt="Logo Universidad de Am&eacute;rica" class="w-full h-full object-contain">
         </div>
         <div>
           <div class="flex items-center space-x-2">
             <span class="text-xs font-black tracking-wider text-[#e5a93b] uppercase">UNIVERSIDAD DE AM&Eacute;RICA &bull; FACULTAD DE INGENIER&Iacute;AS</span>
           </div>
-          <p class="text-xs sm:text-sm font-medium text-slate-200">
-            Ingenier&iacute;a Qu&iacute;mica &bull; <strong class="text-white font-bold">Dise&ntilde;o de Plantas</strong> &bull; Reporte Oficial de Seguridad de Procesos
+          <p class="text-xs font-medium text-slate-200">
+            Ingenier&iacute;a Qu&iacute;mica &bull; <strong class="text-white font-bold">Dise&ntilde;o de Plantas</strong> &bull; Reporte Integral de Seguridad de Procesos
           </p>
         </div>
       </div>
@@ -80,9 +80,9 @@
       </div>
       <div class="flex flex-col items-center flex-grow max-w-md mx-4">
         <div class="w-full bg-slate-200 h-1.5 rounded-full overflow-hidden mb-1">
-          <div id="progressBar" class="bg-[#0b3d23] h-full transition-all duration-300" style="width: 12.5%;"></div>
+          <div id="progressBar" class="bg-[#0b3d23] h-full transition-all duration-300" style="width: 8.3%;"></div>
         </div>
-        <div id="slideCounterText" class="text-xs font-semibold text-slate-600">Diapositiva 1 de 8 &bull; Portada Oficial</div>
+        <div id="slideCounterText" class="text-xs font-semibold text-slate-600">Diapositiva 1 de 12 &bull; Portada Oficial</div>
       </div>
       <div class="flex items-center space-x-2">
         <button id="btnPrev" class="px-4 py-1.5 rounded-lg text-xs font-bold text-slate-600 bg-slate-100 hover:bg-slate-200 disabled:opacity-40 disabled:cursor-not-allowed transition-all flex items-center space-x-1">
@@ -112,7 +112,7 @@
       <nav class="mt-4 space-y-1.5 overflow-y-auto max-h-[72vh] pr-1" id="navIndexList"></nav>
     </div>
     <div class="pt-4 border-t border-slate-100 text-[11px] text-slate-400 text-center">
-      Basado en EGPC-PSM-GL-001, ISO 17776 &amp; ISD (Amyotte / Kletz / Mocellin)
+      EGPC-PSM-GL-001 &bull; IEC 61511 &bull; CCPS ISD &bull; AIChE CEP
     </div>
   </aside>
   <!-- SCRIPTS -->
@@ -124,29 +124,29 @@
         id: "portada",
         title: "Portada Oficial",
         render: () => `
-          <div class="bg-[#0b3d23] text-white rounded-3xl p-8 sm:p-14 shadow-2xl border-4 border-[#072917] max-w-4xl mx-auto my-3 text-center relative overflow-hidden">
+          <div class="bg-[#0b3d23] text-white rounded-3xl p-8 sm:p-12 shadow-2xl border-4 border-[#072917] max-w-4xl mx-auto my-3 text-center relative overflow-hidden">
             <div class="absolute -right-20 -bottom-20 w-72 h-72 rounded-full border-8 border-white/5 pointer-events-none"></div>
             <div class="absolute -left-20 -top-20 w-72 h-72 rounded-full border-8 border-[#e5a93b]/10 pointer-events-none"></div>
             <p class="text-xs sm:text-sm font-black tracking-widest text-[#e5a93b] uppercase mb-1">UNIVERSIDAD DE AM&Eacute;RICA</p>
             <p class="text-[11px] sm:text-xs font-bold text-slate-200 tracking-wider uppercase mb-5">FACULTAD DE INGENIER&Iacute;AS &bull; PROGRAMA DE INGENIER&Iacute;A QU&Iacute;MICA &bull; DISE&Ntilde;O DE PLANTAS</p>
-            <div class="w-28 h-28 sm:w-32 sm:h-32 mx-auto my-3 rounded-full border-4 border-[#e5a93b] bg-white p-2 shadow-2xl flex items-center justify-center">
+            <div class="w-24 h-24 sm:w-28 sm:h-28 mx-auto my-3 rounded-full border-4 border-[#e5a93b] bg-white p-2 shadow-2xl flex items-center justify-center">
               <img src="${LOGO_IMG_SRC}" alt="Logo Oficial Universidad de Am&eacute;rica" class="w-full h-full object-contain">
             </div>
-            <h1 class="text-2xl sm:text-4xl font-black text-white leading-tight uppercase max-w-2xl mx-auto mt-4 mb-3 tracking-tight">
-              DISE&Ntilde;O B&Aacute;SICO INTEGRAL, DISE&Ntilde;O INHERENTEMENTE SEGURO (ISD) Y ESTUDIO HAZID PARA UNA PLANTA INDUSTRIAL DE &Aacute;CIDO SULF&Uacute;RICO (H<sub>2</sub>SO<sub>4</sub>) DE 500 TPD
+            <h1 class="text-2xl sm:text-3xl font-black text-white leading-tight uppercase max-w-2xl mx-auto mt-4 mb-3 tracking-tight">
+              DISE&Ntilde;O INHERENTEMENTE SEGURO (ISD), HAZID, FMEA Y AUTOMATIZACI&Oacute;N AVANZADA PARA UNA PLANTA INDUSTRIAL DE &Aacute;CIDO SULF&Uacute;RICO (H<sub>2</sub>SO<sub>4</sub>) DE 500 TPD
             </h1>
-            <p class="text-sm sm:text-base font-bold text-[#e5a93b] max-w-2xl mx-auto mb-5">
-              Proceso de Doble Contacto Doble Absorci&oacute;n (DCDA 3+1) con Integraci&oacute;n Energ&eacute;tica y Cogeneraci&oacute;n El&eacute;ctrica
+            <p class="text-sm sm:text-base font-bold text-[#e5a93b] max-w-2xl mx-auto mb-4">
+              Proceso Doble Contacto Doble Absorci&oacute;n (DCDA 3+1) con Integraci&oacute;n Energ&eacute;tica y Cogeneraci&oacute;n El&eacute;ctrica
             </p>
-            <div class="inline-block bg-[#082d1a] border border-[#1c6b41] rounded-full px-5 py-1.5 text-xs text-slate-200 font-medium mb-7">
-              Planta de Referencia T&eacute;cnica: <strong class="text-white font-bold">Nuberg EPC &ndash; Sprea Misr, Ramadan City, Egipto</strong>
+            <div class="inline-block bg-[#082d1a] border border-[#1c6b41] rounded-full px-4 py-1 text-xs text-slate-200 font-medium mb-6">
+              Referencia T&eacute;cnica: <strong class="text-white font-bold">Nuberg EPC &ndash; Sprea Misr, Ramadan City, Egipto</strong>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-xl mx-auto text-center mb-6">
-              <div class="bg-[#09351e]/90 border border-[#195a35] rounded-xl p-3.5 shadow">
+              <div class="bg-[#09351e]/90 border border-[#195a35] rounded-xl p-3 shadow">
                 <p class="text-sm font-bold text-white">Esteban Alejandro Gonz&aacute;lez Correa</p>
                 <p class="text-xs font-mono text-[#e5a93b] font-bold mt-0.5">C&oacute;digo: 6221244</p>
               </div>
-              <div class="bg-[#09351e]/90 border border-[#195a35] rounded-xl p-3.5 shadow">
+              <div class="bg-[#09351e]/90 border border-[#195a35] rounded-xl p-3 shadow">
                 <p class="text-sm font-bold text-white">Luis Alfonso Arias Candia</p>
                 <p class="text-xs font-mono text-[#e5a93b] font-bold mt-0.5">C&oacute;digo: 6221290</p>
               </div>
@@ -157,42 +157,26 @@
       },
       {
         id: "pfd-proceso",
-        title: "PFD Oficial & Descripci&oacute;n del Proceso",
+        title: "PFD Oficial & Arquitectura DCDA 3+1",
         render: () => `
-          <div class="space-y-5">
-            <div class="border-b border-slate-200 pb-3 flex items-center justify-between">
+          <div class="space-y-4">
+            <div class="border-b border-slate-200 pb-2.5 flex items-center justify-between">
               <div>
-                <span class="text-xs font-bold uppercase tracking-wider text-[#e5a93b]">M&oacute;dulo 1 &bull; Arquitectura de Planta</span>
-                <h2 class="text-2xl font-black text-[#0b3d23]">Diagrama de Flujo de Proceso (PFD) - 500 TPD DCDA 3+1</h2>
+                <span class="text-xs font-bold uppercase tracking-wider text-[#e5a93b]">M&oacute;dulo 1 &bull; Arquitectura de Proceso</span>
+                <h2 class="text-xl sm:text-2xl font-black text-[#0b3d23]">Diagrama de Flujo de Proceso (PFD) - 500 TPD DCDA 3+1</h2>
               </div>
-              <span class="text-xs font-bold px-3 py-1 bg-emerald-100 text-emerald-800 rounded-full">Base del Estudio HAZID</span>
+              <span class="text-xs font-bold px-3 py-1 bg-emerald-100 text-emerald-800 rounded-full">Base del HAZID &amp; FMEA</span>
             </div>
-            <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-md">
-              <div class="flex items-center justify-between mb-2">
-                <h3 class="text-xs font-bold text-[#0b3d23] uppercase tracking-wide">Esquema Tecnol&oacute;gico: Doble Contacto Doble Absorci&oacute;n con Recuperaci&oacute;n de Vapor</h3>
-                <span class="text-[11px] text-slate-500 font-mono">16 Equipos Principales &bull; 29 Corrientes Clave</span>
-              </div>
+            <div class="bg-white p-3 rounded-2xl border border-slate-200 shadow-md">
               <div class="w-full bg-slate-50 rounded-xl border border-slate-200 overflow-hidden flex items-center justify-center p-2">
-                <img src="${PFD_IMG_SRC}" alt="PFD Planta de &Aacute;cido Sulf&uacute;rico 500 TPD" class="w-full max-h-[380px] object-contain rounded-lg shadow-sm">
+                <img src="${PFD_IMG_SRC}" alt="PFD Planta de &Aacute;cido Sulf&uacute;rico 500 TPD" class="w-full max-h-[370px] object-contain rounded-lg shadow-sm">
               </div>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-3 text-xs">
-              <div class="bg-white p-3.5 rounded-xl border border-slate-200 shadow-sm">
-                <strong class="text-[#0b3d23] block text-xs font-bold mb-1">1. Combusti&oacute;n de Azufre</strong>
-                <p class="text-slate-600 text-[11px]">Soplador <strong>BL-101</strong>, Secado <strong>T-101</strong>, Quemador <strong>B-101</strong> (1150 &deg;C) y Caldera <strong>WHB-101</strong>.</p>
-              </div>
-              <div class="bg-white p-3.5 rounded-xl border border-slate-200 shadow-sm">
-                <strong class="text-[#0b3d23] block text-xs font-bold mb-1">2. Bucle Primario (Lechos 1-3)</strong>
-                <p class="text-slate-600 text-[11px]">Convertidor catal&iacute;tico <strong>R-101</strong>, Caldera <strong>WHB-102</strong>, Intercambiador <strong>HX-101</strong> y <strong>ECO-101</strong>.</p>
-              </div>
-              <div class="bg-white p-3.5 rounded-xl border border-slate-200 shadow-sm">
-                <strong class="text-[#0b3d23] block text-xs font-bold mb-1">3. Absorci&oacute;n &amp; Lecho 4</strong>
-                <p class="text-slate-600 text-[11px]">Torre Intermedia <strong>T-201</strong> (retira SO<sub>3</sub>), Lecho 4, <strong>ECO-102</strong> y Torre Final <strong>T-202</strong>.</p>
-              </div>
-              <div class="bg-white p-3.5 rounded-xl border border-slate-200 shadow-sm">
-                <strong class="text-[#0b3d23] block text-xs font-bold mb-1">4. Manejo de &Aacute;cido</strong>
-                <p class="text-slate-600 text-[11px]">C&aacute;ntara de mezcla <strong>TK-101</strong>, agua de diluci&oacute;n [28], enfriador <strong>E-101</strong> y tanque <strong>TK-102</strong>.</p>
-              </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-2.5 text-xs">
+              <div class="bg-white p-2.5 rounded-xl border border-slate-200 shadow-sm"><strong class="text-[#0b3d23] block text-xs font-bold mb-0.5">1. Combusti&oacute;n Azufre</strong><p class="text-slate-600 text-[11px]">BL-101, T-101, Quemador B-101 (1150 &deg;C) y Caldera WHB-101.</p></div>
+              <div class="bg-white p-2.5 rounded-xl border border-slate-200 shadow-sm"><strong class="text-[#0b3d23] block text-xs font-bold mb-0.5">2. Bucle Primario (1-3)</strong><p class="text-slate-600 text-[11px]">Convertidor R-101 Lechos 1-3, WHB-102, Intercambiador HX-101 y ECO-101.</p></div>
+              <div class="bg-white p-2.5 rounded-xl border border-slate-200 shadow-sm"><strong class="text-[#0b3d23] block text-xs font-bold mb-0.5">3. Absorci&oacute;n Intermedia</strong><p class="text-slate-600 text-[11px]">Torre T-201 (elimina SO<sub>3</sub>), Lecho 4, ECO-102 y Torre Final T-202.</p></div>
+              <div class="bg-white p-2.5 rounded-xl border border-slate-200 shadow-sm"><strong class="text-[#0b3d23] block text-xs font-bold mb-0.5">4. C&aacute;ntara &amp; Despacho</strong><p class="text-slate-600 text-[11px]">C&aacute;ntara TK-101, diluci&oacute;n [28], enfriador E-101 y almacenamiento TK-102.</p></div>
             </div>
           </div>
         `
@@ -201,145 +185,160 @@
         id: "fundamentos-adn",
         title: "Fundamentos de Riesgo & ADN del Peligro",
         render: () => `
-          <div class="space-y-5">
-            <div class="border-b border-slate-200 pb-3 flex items-center justify-between">
+          <div class="space-y-4">
+            <div class="border-b border-slate-200 pb-2.5 flex items-center justify-between">
               <div>
                 <span class="text-xs font-bold uppercase tracking-wider text-[#e5a93b]">M&oacute;dulo 2 &bull; Marco Conceptual</span>
-                <h2 class="text-2xl font-black text-[#0b3d23]">Seguridad Ocupacional vs. Seguridad de Procesos (PSM)</h2>
+                <h2 class="text-xl sm:text-2xl font-black text-[#0b3d23]">Seguridad Ocupacional vs. Seguridad de Procesos (PSM)</h2>
               </div>
               <span class="text-xs font-bold px-3 py-1 bg-amber-100 text-amber-900 rounded-full">Tipo I vs. Tipo II</span>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
+              <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm">
                 <div class="flex items-center space-x-2 text-slate-700 font-bold mb-2">
                   <div class="w-3.5 h-3.5 rounded-full bg-slate-400"></div>
                   <h3 class="text-base font-extrabold">Seguridad Ocupacional (Tipo I)</h3>
                 </div>
-                <p class="text-xs text-slate-600 mb-3">Enfocada en proteger al trabajador individual frente a accidentes laborales mec&aacute;nicos o ergon&oacute;micos cotidianos.</p>
-                <div class="space-y-1.5 text-xs text-slate-700">
-                  <p>&bull; <strong>Frecuencia / Severidad:</strong> Alta frecuencia / Baja consecuencia individual.</p>
-                  <p>&bull; <strong>Ejemplos t&iacute;picos:</strong> Ca&iacute;das a diferente nivel, resbalones, atrapamientos.</p>
-                  <p>&bull; <strong>Defensa principal:</strong> EPP diel&eacute;ctrico/qu&iacute;mico, entrenamiento operativo, se&ntilde;alizaci&oacute;n.</p>
+                <p class="text-xs text-slate-600 mb-2">Enfocada en proteger al trabajador individual frente a accidentes laborales mec&aacute;nicos cotidianos.</p>
+                <div class="space-y-1 text-xs text-slate-700">
+                  <p>&bull; <strong>Frecuencia / Severidad:</strong> Alta frecuencia / Baja consecuencia puntual.</p>
+                  <p>&bull; <strong>Ejemplos:</strong> Ca&iacute;das en plataformas, tropiezos, salpicaduras leves.</p>
+                  <p>&bull; <strong>Defensa:</strong> EPP, procedimientos est&aacute;ndar, capacitaciones.</p>
                 </div>
               </div>
-              <div class="bg-white p-5 rounded-2xl border-2 border-[#0b3d23] shadow-md relative overflow-hidden">
-                <div class="absolute top-0 right-0 bg-[#0b3d23] text-[#e5a93b] text-[10px] font-black uppercase px-3 py-0.5 rounded-bl-lg">Enfoque Central del HAZID</div>
+              <div class="bg-white p-4 rounded-2xl border-2 border-[#0b3d23] shadow-md relative overflow-hidden">
+                <div class="absolute top-0 right-0 bg-[#0b3d23] text-[#e5a93b] text-[10px] font-black uppercase px-2.5 py-0.5 rounded-bl-lg">Enfoque Central HAZID / PSM</div>
                 <div class="flex items-center space-x-2 text-[#0b3d23] font-bold mb-2">
                   <div class="w-3.5 h-3.5 rounded-full bg-[#0b3d23]"></div>
-                  <h3 class="text-base font-extrabold">Seguridad de Procesos (Tipo II - PSM)</h3>
+                  <h3 class="text-base font-extrabold">Seguridad de Procesos (Tipo II)</h3>
                 </div>
-                <p class="text-xs text-slate-600 mb-3">Enfocada en la integridad mec&aacute;nica de los equipos para confinar materiales peligrosos de alta energ&iacute;a o toxicidad.</p>
-                <div class="space-y-1.5 text-xs text-slate-700">
-                  <p>&bull; <strong>Frecuencia / Severidad:</strong> Baja frecuencia / <strong>Consecuencias catastr&oacute;ficas mayores</strong>.</p>
-                  <p>&bull; <strong>Ejemplos cr&iacute;ticos:</strong> Nube de SO<sub>2</sub>/SO<sub>3</sub>, choque t&eacute;rmico en WHB-101, explosi&oacute;n de H<sub>2</sub> en TK-102.</p>
-                  <p>&bull; <strong>Defensa principal:</strong> <strong>Dise&ntilde;o Inherentemente M&aacute;s Seguro (ISD)</strong>, LOPA y enclavamientos SIL-2.</p>
+                <p class="text-xs text-slate-600 mb-2">Integridad de contenci&oacute;n y prevenci&oacute;n de liberaciones de alta energ&iacute;a o toxicidad masiva.</p>
+                <div class="space-y-1 text-xs text-slate-700">
+                  <p>&bull; <strong>Frecuencia / Severidad:</strong> Baja frecuencia / <strong>Consecuencias catastr&oacute;ficas</strong>.</p>
+                  <p>&bull; <strong>Ejemplos:</strong> Fuga masiva de SO<sub>2</sub>/SO<sub>3</sub>, choque t&eacute;rmico en WHB, explosi&oacute;n H<sub>2</sub>.</p>
+                  <p>&bull; <strong>Defensa:</strong> Dise&ntilde;o Inherentemente M&aacute;s Seguro (ISD), LOPA, SIS/SIL-2.</p>
                 </div>
               </div>
             </div>
-            <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
-              <h3 class="text-sm font-extrabold text-[#0b3d23] mb-3 flex items-center space-x-2">
-                <span class="w-2.5 h-2.5 rounded-full bg-[#e5a93b]"></span>
-                <span>ADN del Peligro: L&iacute;mites Cr&iacute;ticos en la Planta de &Aacute;cido Sulf&uacute;rico</span>
-              </h3>
-              <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
-                <div class="p-3 bg-red-50/60 rounded-xl border border-red-100">
-                  <span class="font-extrabold text-red-900 block mb-0.5">SO<sub>2</sub> (Di&oacute;xido de Azufre)</span>
-                  <p class="text-red-700 text-[11px] font-semibold">TLV: 0.25 ppm | IDLH: 100 ppm</p>
-                  <p class="text-slate-600 mt-1">Gas sofocante en B-101 (&gt;11% vol). Causa edema agudo y toxicidad pulmonar severa.</p>
-                </div>
-                <div class="p-3 bg-amber-50/60 rounded-xl border border-amber-100">
-                  <span class="font-extrabold text-amber-900 block mb-0.5">SO<sub>3</sub> (Tri&oacute;xido de Azufre)</span>
-                  <p class="text-amber-700 text-[11px] font-semibold">TLV-C: 0.1 mg/m&sup3;</p>
-                  <p class="text-slate-600 mt-1">Reacciona violentamente con humedad formando niebla &aacute;cida (&Delta;H = -130 kJ/mol).</p>
-                </div>
-                <div class="p-3 bg-blue-50/60 rounded-xl border border-blue-100">
-                  <span class="font-extrabold text-blue-900 block mb-0.5">H<sub>2</sub>SO<sub>4</sub> (98.5% p/p)</span>
-                  <p class="text-blue-700 text-[11px] font-semibold">Densidad: 1.84 g/cm&sup3;</p>
-                  <p class="text-slate-600 mt-1">Corrosivo severo; deshidrata tejidos biol&oacute;gicos y genera hidr&oacute;geno con aceros.</p>
-                </div>
-                <div class="p-3 bg-purple-50/60 rounded-xl border border-purple-100">
-                  <span class="font-extrabold text-purple-900 block mb-0.5">Vapor WHB &amp; Hidr&oacute;geno</span>
-                  <p class="text-purple-700 text-[11px] font-semibold">40 bar (400 &deg;C) | H<sub>2</sub> LEL: 4%</p>
-                  <p class="text-slate-600 mt-1">Energ&iacute;a mec&aacute;nica acumulada y riesgo de deflagraci&oacute;n inflamable en c&uacute;pulas.</p>
-                </div>
+            <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm">
+              <h3 class="text-xs font-extrabold text-[#0b3d23] uppercase mb-2 flex items-center space-x-2"><span class="w-2.5 h-2.5 rounded-full bg-[#e5a93b]"></span><span>ADN del Peligro: L&iacute;mites Cr&iacute;ticos en la Planta 500 TPD</span></h3>
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 text-xs">
+                <div class="p-2.5 bg-red-50/70 rounded-xl border border-red-100"><span class="font-extrabold text-red-900 block mb-0.5">SO<sub>2</sub> (Di&oacute;xido)</span><p class="text-red-700 text-[11px] font-semibold">TLV: 0.25 ppm | IDLH: 100 ppm</p><p class="text-slate-600 text-[11px] mt-1">Gas t&oacute;xico sofocante en B-101 (11.5% vol). Provoca edema pulmonar agudo.</p></div>
+                <div class="p-2.5 bg-amber-50/70 rounded-xl border border-amber-100"><span class="font-extrabold text-amber-900 block mb-0.5">SO<sub>3</sub> (Tri&oacute;xido)</span><p class="text-amber-700 text-[11px] font-semibold">TLV-C: 0.1 mg/m&sup3;</p><p class="text-slate-600 text-[11px] mt-1">Reacci&oacute;n instant&aacute;nea con agua formando niebla corrosiva (&Delta;H = -130 kJ/mol).</p></div>
+                <div class="p-2.5 bg-blue-50/70 rounded-xl border border-blue-100"><span class="font-extrabold text-blue-900 block mb-0.5">H<sub>2</sub>SO<sub>4</sub> (98.5% p/p)</span><p class="text-blue-700 text-[11px] font-semibold">Densidad: 1.84 g/cm&sup3;</p><p class="text-slate-600 text-[11px] mt-1">Destrucci&oacute;n tisular severa. Ataque al acero carbono genera gas H<sub>2</sub> inflamable.</p></div>
+                <div class="p-2.5 bg-purple-50/70 rounded-xl border border-purple-100"><span class="font-extrabold text-purple-900 block mb-0.5">Vapor WHB &amp; Hidr&oacute;geno</span><p class="text-purple-700 text-[11px] font-semibold">40 bar (400 &deg;C) | H<sub>2</sub> LEL: 4%</p><p class="text-slate-600 text-[11px] mt-1">Alta energ&iacute;a termodin&aacute;mica acumulada y riesgo de deflagraci&oacute;n en c&uacute;pula de tanques.</p></div>
               </div>
             </div>
           </div>
         `
       },
       {
-        id: "isd-cuatro-pilares",
-        title: "Dise&ntilde;o Inherentemente M&aacute;s Seguro (ISD)",
+        id: "isd-alternativas",
+        title: "Comparativa ISD: Alternativas & Compromisos",
         render: () => `
-          <div class="space-y-5">
-            <div class="border-b border-slate-200 pb-3 flex items-center justify-between">
+          <div class="space-y-4">
+            <div class="border-b border-slate-200 pb-2.5 flex items-center justify-between">
               <div>
-                <span class="text-xs font-bold uppercase tracking-wider text-[#e5a93b]">M&oacute;dulo 3 &bull; Jerarqu&iacute;a de Prevenci&oacute;n</span>
-                <h2 class="text-2xl font-black text-[#0b3d23]">Los 4 Pilares del Dise&ntilde;o Inherentemente Seguro en DCDA</h2>
+                <span class="text-xs font-bold uppercase tracking-wider text-[#e5a93b]">M&oacute;dulo 3 &bull; Dise&ntilde;o Inherentemente M&aacute;s Seguro</span>
+                <h2 class="text-xl sm:text-2xl font-black text-[#0b3d23]">Comparaci&oacute;n de Alternativas, Trade-Offs &amp; Literatura ISD</h2>
               </div>
-              <span class="text-xs font-bold px-3 py-1 bg-emerald-100 text-emerald-800 rounded-full">Kletz / Amyotte 2021</span>
+              <span class="text-xs font-bold px-3 py-1 bg-emerald-100 text-emerald-800 rounded-full">Kletz, Amyotte &amp; CCPS</span>
             </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between">
-                <div>
-                  <div class="w-9 h-9 rounded-xl bg-[#0b3d23] text-[#e5a93b] flex items-center justify-center font-black text-sm mb-3 shadow">1</div>
-                  <h3 class="text-base font-extrabold text-[#0b3d23] mb-0.5">Minimizaci&oacute;n</h3>
-                  <p class="text-[11px] text-[#e5a93b] font-bold uppercase tracking-wider mb-2">Intensification</p>
-                  <p class="text-xs text-slate-600 mb-3">Reducir el inventario de materiales peligrosos para limitar la escala de da&ntilde;o.</p>
-                </div>
-                <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 text-xs">
-                  <strong class="text-[#0b3d23] block mb-1">En Planta 500 TPD:</strong>
-                  &bull; C&aacute;ntara <strong>TK-101</strong>: holdup reducido a <strong>3-5 minutos</strong> (reduce 65% del inventario caliente circulante).<br>
-                  &bull; Intercambiadores gas/gas <strong>HX-101 compactos</strong>.
-                </div>
-              </div>
-              <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between">
-                <div>
-                  <div class="w-9 h-9 rounded-xl bg-[#0b3d23] text-[#e5a93b] flex items-center justify-center font-black text-sm mb-3 shadow">2</div>
-                  <h3 class="text-base font-extrabold text-[#0b3d23] mb-0.5">Sustituci&oacute;n</h3>
-                  <p class="text-[11px] text-[#e5a93b] font-bold uppercase tracking-wider mb-2">Substitution</p>
-                  <p class="text-xs text-slate-600 mb-3">Reemplazar sustancias o mecanismos propensos a fallas por alternativas benignas.</p>
-                </div>
-                <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 text-xs">
-                  <strong class="text-[#0b3d23] block mb-1">En Planta 500 TPD:</strong>
-                  &bull; Catalizador de <strong>Cesio (Cs-V<sub>2</sub>O<sub>5</sub>)</strong> en Lecho 1: ignici&oacute;n a <strong>390 &deg;C</strong> (vs 430 &deg;C), menor estr&eacute;s t&eacute;rmico.<br>
-                  &bull; Bombas con <strong>acople magn&eacute;tico herm&eacute;tico</strong> (cero fugas de sello).
-                </div>
-              </div>
-              <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between">
-                <div>
-                  <div class="w-9 h-9 rounded-xl bg-[#0b3d23] text-[#e5a93b] flex items-center justify-center font-black text-sm mb-3 shadow">3</div>
-                  <h3 class="text-base font-extrabold text-[#0b3d23] mb-0.5">Moderaci&oacute;n</h3>
-                  <p class="text-[11px] text-[#e5a93b] font-bold uppercase tracking-wider mb-2">Attenuation</p>
-                  <p class="text-xs text-slate-600 mb-3">Operar a condiciones menos severas de presi&oacute;n, temperatura y concentraci&oacute;n.</p>
-                </div>
-                <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 text-xs">
-                  <strong class="text-[#0b3d23] block mb-1">En Planta 500 TPD:</strong>
-                  &bull; Operaci&oacute;n a <strong>98.3&ndash;98.5% H<sub>2</sub>SO<sub>4</sub></strong>: tasa m&iacute;nima de corrosi&oacute;n en aleaciones Saramet/SX.<br>
-                  &bull; Enfriamiento inter-etapas en <strong>WHB-102 y ECO-101</strong> para evitar sinterizaci&oacute;n (&lt;630 &deg;C).
-                </div>
-              </div>
-              <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between">
-                <div>
-                  <div class="w-9 h-9 rounded-xl bg-[#0b3d23] text-[#e5a93b] flex items-center justify-center font-black text-sm mb-3 shadow">4</div>
-                  <h3 class="text-base font-extrabold text-[#0b3d23] mb-0.5">Simplificaci&oacute;n</h3>
-                  <p class="text-[11px] text-[#e5a93b] font-bold uppercase tracking-wider mb-2">Simplification</p>
-                  <p class="text-xs text-slate-600 mb-3">Eliminar complejidades mec&aacute;nicas y evitar oportunidades de error humano.</p>
-                </div>
-                <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 text-xs">
-                  <strong class="text-[#0b3d23] block mb-1">En Planta 500 TPD:</strong>
-                  &bull; <strong>Distribuidores de canaleta</strong> por gravedad en torres T-201/202 en lugar de toberas presurizadas.<br>
-                  &bull; Filosof&iacute;a <em>Fail-Closed</em> en azufre y eliminaci&oacute;n de tramos muertos propensos a acumular H<sub>2</sub>.
-                </div>
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+              <div class="overflow-x-auto">
+                <table class="w-full hazid-table border-collapse">
+                  <thead>
+                    <tr>
+                      <th class="w-28">Pilar ISD</th>
+                      <th>Dise&ntilde;o Convencional (L&iacute;nea Base)</th>
+                      <th>Alternativa ISD Propuesta</th>
+                      <th>Ventajas en Seguridad de Procesos</th>
+                      <th>Limitaciones / Compromisos (Trade-Offs)</th>
+                      <th>Sustento de Literatura</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong class="text-[#0b3d23] block font-bold">Minimizaci&oacute;n</strong><span class="text-[10px] text-slate-500 font-mono">Intensification</span></td>
+                      <td>C&aacute;ntaras de &aacute;cido con holdup de 15&ndash;20 min (tanque &gt;120 m&sup3; de &aacute;cido hirviente).</td>
+                      <td>C&aacute;ntara compacta <strong>TK-101</strong> dimensionada a <strong>3&ndash;5 min de holdup</strong> (30 m&sup3;) con bombas de alto caudal.</td>
+                      <td><strong>Reduce 65% del inventario</strong> t&oacute;xico/corrosivo en bucle caliente. Menor escala de derrame.</td>
+                      <td>Menor inercia ante paradas de bombeo; exige control de nivel e interlocks m&aacute;s r&aacute;pidos.</td>
+                      <td>Amyotte (2021); Kletz (1998): <em>"What you don't have can't leak"</em>.</td>
+                    </tr>
+                    <tr>
+                      <td><strong class="text-[#0b3d23] block font-bold">Sustituci&oacute;n</strong><span class="text-[10px] text-slate-500 font-mono">Substitution</span></td>
+                      <td>Catalizador est&aacute;ndar V<sub>2</sub>O<sub>5</sub> (ignici&oacute;n a 430 &deg;C). Bombas con sellos mec&aacute;nicos dobles presurizados.</td>
+                      <td>Catalizador de <strong>Cesio (Cs-V<sub>2</sub>O<sub>5</sub>)</strong> en Lecho 1 (ignici&oacute;n 390 &deg;C). Bombas con <strong>acople magn&eacute;tico herm&eacute;tico</strong>.</td>
+                      <td>Evita sobrecalentamiento inicial; cero riesgo de fuga por fallo catastr&oacute;fico de sellos mec&aacute;nicos.</td>
+                      <td>Mayor costo inicial de adquisici&oacute;n de catalizador promovido y l&iacute;mite de potencia motriz en bombas magn&eacute;ticas.</td>
+                      <td>Sprea Misr Nuberg Plant Design Data; CCPS Inherently Safer Chemical Processes (2020).</td>
+                    </tr>
+                    <tr>
+                      <td><strong class="text-[#0b3d23] block font-bold">Moderaci&oacute;n</strong><span class="text-[10px] text-slate-500 font-mono">Attenuation</span></td>
+                      <td>Operaci&oacute;n a concentraciones fluctuantes (93&ndash;97%) y tubos de caldera sometidos a gas directo sin amortiguaci&oacute;n.</td>
+                      <td>Control en punto eut&eacute;ctico <strong>98.4&ndash;98.5% H<sub>2</sub>SO<sub>4</sub></strong> y camisa refractaria pirotubular en <strong>WHB-101</strong>.</td>
+                      <td>Corrosi&oacute;n pr&aacute;cticamente nula (&lt;0.02 mm/a&ntilde;o); amortigua gradientes t&eacute;rmicos bruscos (1150 &deg;C a 420 &deg;C).</td>
+                      <td>Tolerancia de concentraci&oacute;n muy estrecha (&plusmn;0.2%); requiere analizadores Coriolis y conductividad redundantes.</td>
+                      <td>Mocellin (2022); Davenport &amp; King (Sulfuric Acid Manufacture).</td>
+                    </tr>
+                    <tr>
+                      <td><strong class="text-[#0b3d23] block font-bold">Simplificaci&oacute;n</strong><span class="text-[10px] text-slate-500 font-mono">Simplification</span></td>
+                      <td>Boquillas de aspersi&oacute;n presurizadas en torres y tramos ciegos en colectores de despacho.</td>
+                      <td><strong>Distribuidores de canaleta</strong> por gravedad en T-201/202 y l&iacute;neas autovaciables con purga N<sub>2</sub>.</td>
+                      <td>Imposibilita taponamiento por sulfatos; previene bolsas de H<sub>2</sub> acumulado inflamable.</td>
+                      <td>Requiere perfecta nivelaci&oacute;n hidr&aacute;ulica mec&aacute;nica durante el montaje civil de las torres.</td>
+                      <td>Ab Rahim et al. (2024); Perry's Chemical Engineers' Handbook Sec. 23.</td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
             </div>
-            <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex flex-col md:flex-row items-center justify-between gap-3 text-xs">
-              <div class="text-slate-700">
-                <span class="font-bold text-[#0b3d23]">Jerarqu&iacute;a de Defensas:</span>
-                <strong>1. Inherente</strong> (Eliminaci&oacute;n en ra&iacute;z) &gt; <strong>2. Pasivo</strong> (Diques, materiales SX) &gt; <strong>3. Activo</strong> (SIS/SIL-2, ESD) &gt; <strong>4. Procedimental</strong> (SOPs, EPP).
+          </div>
+        `
+      },
+      {
+        id: "evolucion-tendencias",
+        title: "Evoluci\u00F3n Hist\u00F3rica & Tendencias Futuras",
+        render: () => `
+          <div class="space-y-4">
+            <div class="border-b border-slate-200 pb-2.5 flex items-center justify-between">
+              <div>
+                <span class="text-xs font-bold uppercase tracking-wider text-[#e5a93b]">M&oacute;dulo 3 &bull; Contexto Tecnol&oacute;gico</span>
+                <h2 class="text-xl sm:text-2xl font-black text-[#0b3d23]">Evoluci&oacute;n de Seguridad en Plantas de &Aacute;cido &amp; Industria 4.0</h2>
               </div>
-              <div class="px-3 py-1 bg-emerald-50 text-emerald-800 rounded-lg font-bold border border-emerald-200 text-right">
-                Reducci&oacute;n M&aacute;xima de Riesgo en Fase Conceptual
+              <span class="text-xs font-bold px-3 py-1 bg-blue-100 text-blue-800 rounded-full">D&eacute;cadas 1980&ndash;2026+</span>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-3.5 text-xs">
+              <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between">
+                <div>
+                  <span class="px-2 py-0.5 rounded bg-slate-100 text-slate-700 font-bold text-[10px] uppercase">1980 &ndash; 2000</span>
+                  <h3 class="text-sm font-extrabold text-[#0b3d23] mt-2 mb-1.5">Seguridad Basada en Adici&oacute;n Pasiva</h3>
+                  <p class="text-slate-600 mb-2">Plantas de contacto simple (SCDA) con altas emisiones (&gt;2000 ppm SO<sub>2</sub>). Tuber&iacute;as de hierro colado propensas a fractura fr&aacute;gil y calderas sin protecci&oacute;n instrumentada SIL.</p>
+                </div>
+                <div class="p-2.5 bg-slate-50 rounded-xl border border-slate-200 text-[11px] text-slate-700">
+                  <strong>Limitaci&oacute;n:</strong> Mantenimiento altamente reactivo y exposici&oacute;n humana recurrente a fugas.
+                </div>
+              </div>
+              <div class="bg-white p-4 rounded-2xl border-2 border-[#0b3d23] shadow-md flex flex-col justify-between">
+                <div>
+                  <span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-bold text-[10px] uppercase">2000 &ndash; Presente (Estado del Arte)</span>
+                  <h3 class="text-sm font-extrabold text-[#0b3d23] mt-2 mb-1.5">DCDA 3+1 &amp; Aleaciones Austen&iacute;ticas</h3>
+                  <p class="text-slate-600 mb-2">Conversi&oacute;n catal&iacute;tica &gt;99.8% (emisi&oacute;n &lt;250 ppm SO<sub>2</sub>). Introducci&oacute;n de aleaciones avanzadas con alto silicio (<strong>Saramet, Sandvik SX</strong>) que regeneran pel&iacute;cula pasiva y sistemas SIS certificados SIL-2 bajo IEC 61511.</p>
+                </div>
+                <div class="p-2.5 bg-emerald-50 rounded-xl border border-emerald-200 text-[11px] text-emerald-900">
+                  <strong>Logro:</strong> Eliminaci&oacute;n de fallos mec&aacute;nicos por corrosi&oacute;n intergranular y quemado de azufre limpio.
+                </div>
+              </div>
+              <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between">
+                <div>
+                  <span class="px-2 py-0.5 rounded bg-amber-100 text-amber-800 font-bold text-[10px] uppercase">Tendencias Actuales &amp; Futuras</span>
+                  <h3 class="text-sm font-extrabold text-[#0b3d23] mt-2 mb-1.5">HRS, Gemelos Digitales &amp; Cero Emisiones</h3>
+                  <p class="text-slate-600 mb-2">Recuperaci&oacute;n de energ&iacute;a a alta temperatura (<em>Heat Recovery System - HRS</em>), absorci&oacute;n en reactores microcanal compactos e inspecci&oacute;n no invasiva continua con monitoreo ac&uacute;stico por IA y sensores remotos de SO<sub>2</sub>.</p>
+                </div>
+                <div class="p-2.5 bg-amber-50 rounded-xl border border-amber-200 text-[11px] text-amber-900">
+                  <strong>Horizonte:</strong> Plantas netamente neutras y desasistidas con redundancia tolerante a fallas.
+                </div>
               </div>
             </div>
           </div>
@@ -349,73 +348,38 @@
         id: "hazid-proceso-egpc",
         title: "Metodolog&iacute;a HAZID (EGPC-PSM-GL-001)",
         render: () => `
-          <div class="space-y-5">
-            <div class="border-b border-slate-200 pb-3 flex items-center justify-between">
+          <div class="space-y-4">
+            <div class="border-b border-slate-200 pb-2.5 flex items-center justify-between">
               <div>
-                <span class="text-xs font-bold uppercase tracking-wider text-[#e5a93b]">M&oacute;dulo 4 &bull; Gu&iacute;a Oficial de Seguridad</span>
-                <h2 class="text-2xl font-black text-[#0b3d23]">Metodolog&iacute;a HAZID en 9 Pasos &amp; Partici&oacute;n de Sistemas</h2>
+                <span class="text-xs font-bold uppercase tracking-wider text-[#e5a93b]">M&oacute;dulo 4 &bull; Gu&iacute;a Oficial EGPC</span>
+                <h2 class="text-xl sm:text-2xl font-black text-[#0b3d23]">Metodolog&iacute;a HAZID en 9 Pasos &amp; Partici&oacute;n de Sistemas</h2>
               </div>
               <span class="text-xs font-bold px-3 py-1 bg-blue-100 text-blue-800 rounded-full">EGPC-PSM-GL-001 / ISO 17776</span>
             </div>
-            <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
-              <h3 class="text-sm font-bold text-[#0b3d23] mb-3">Flujo de Ejecuci&oacute;n Metodol&oacute;gico del HAZID</h3>
-              <div class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-9 gap-2 text-center text-xs">
-                <div class="p-2.5 bg-slate-50 rounded-xl border border-slate-200"><span class="font-black text-[#0b3d23] text-sm block">1</span><span class="text-slate-700 font-semibold text-[11px]">Definir &Aacute;rea / Sistema</span></div>
-                <div class="p-2.5 bg-slate-50 rounded-xl border border-slate-200"><span class="font-black text-[#0b3d23] text-sm block">2</span><span class="text-slate-700 font-semibold text-[11px]">Establecer Par&aacute;metros</span></div>
-                <div class="p-2.5 bg-slate-50 rounded-xl border border-slate-200"><span class="font-black text-[#0b3d23] text-sm block">3</span><span class="text-slate-700 font-semibold text-[11px]">Seleccionar Guideword</span></div>
-                <div class="p-2.5 bg-slate-50 rounded-xl border border-slate-200"><span class="font-black text-[#0b3d23] text-sm block">4</span><span class="text-slate-700 font-semibold text-[11px]">&iquest;Es Peligro Cre&iacute;ble?</span></div>
-                <div class="p-2.5 bg-amber-50 rounded-xl border border-amber-200"><span class="font-black text-amber-800 text-sm block">5</span><span class="text-slate-700 font-semibold text-[11px]">Causas y Consecuencias</span></div>
-                <div class="p-2.5 bg-amber-50 rounded-xl border border-amber-200"><span class="font-black text-amber-800 text-sm block">6</span><span class="text-slate-700 font-semibold text-[11px]">Clasificar Riesgo (3 Niveles)</span></div>
-                <div class="p-2.5 bg-emerald-50 rounded-xl border border-emerald-200"><span class="font-black text-emerald-800 text-sm block">7</span><span class="text-slate-700 font-semibold text-[11px]">Identificar Barreras</span></div>
-                <div class="p-2.5 bg-emerald-50 rounded-xl border border-emerald-200"><span class="font-black text-emerald-800 text-sm block">8</span><span class="text-slate-700 font-semibold text-[11px]">Proponer ISD y ALARP</span></div>
-                <div class="p-2.5 bg-slate-50 rounded-xl border border-slate-200"><span class="font-black text-[#0b3d23] text-sm block">9</span><span class="text-slate-700 font-semibold text-[11px]">Minutas y Registro MOC</span></div>
+            <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm">
+              <h3 class="text-xs font-bold text-[#0b3d23] uppercase mb-2">Ciclo de Evaluaci&oacute;n Sistem&aacute;tica HAZID</h3>
+              <div class="grid grid-cols-3 sm:grid-cols-9 gap-1.5 text-center text-xs">
+                <div class="p-2 bg-slate-50 rounded-xl border border-slate-200"><span class="font-black text-[#0b3d23] text-sm block">1</span><span class="text-slate-700 text-[10px]">Definir Sistema</span></div>
+                <div class="p-2 bg-slate-50 rounded-xl border border-slate-200"><span class="font-black text-[#0b3d23] text-sm block">2</span><span class="text-slate-700 text-[10px]">Par&aacute;metros</span></div>
+                <div class="p-2 bg-slate-50 rounded-xl border border-slate-200"><span class="font-black text-[#0b3d23] text-sm block">3</span><span class="text-slate-700 text-[10px]">Guideword</span></div>
+                <div class="p-2 bg-slate-50 rounded-xl border border-slate-200"><span class="font-black text-[#0b3d23] text-sm block">4</span><span class="text-slate-700 text-[10px]">&iquest;Es Cre&iacute;ble?</span></div>
+                <div class="p-2 bg-amber-50 rounded-xl border border-amber-200"><span class="font-black text-amber-800 text-sm block">5</span><span class="text-slate-700 text-[10px]">Causa/Efecto</span></div>
+                <div class="p-2 bg-amber-50 rounded-xl border border-amber-200"><span class="font-black text-amber-800 text-sm block">6</span><span class="text-slate-700 text-[10px]">Risk Ranking</span></div>
+                <div class="p-2 bg-emerald-50 rounded-xl border border-emerald-200"><span class="font-black text-emerald-800 text-sm block">7</span><span class="text-slate-700 text-[10px]">Barreras IPL</span></div>
+                <div class="p-2 bg-emerald-50 rounded-xl border border-emerald-200"><span class="font-black text-emerald-800 text-sm block">8</span><span class="text-slate-700 text-[10px]">Acciones ISD</span></div>
+                <div class="p-2 bg-slate-50 rounded-xl border border-slate-200"><span class="font-black text-[#0b3d23] text-sm block">9</span><span class="text-slate-700 text-[10px]">Registro MOC</span></div>
               </div>
             </div>
-            <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
-              <h3 class="text-sm font-bold text-[#0b3d23] mb-3 flex items-center justify-between">
-                <span>Partici&oacute;n Funcional de la Planta (Criterio &ldquo;Following the Molecule&rdquo;)</span>
-                <span class="text-xs text-slate-500 font-normal">5 Sistemas Nodos</span>
-              </h3>
-              <div class="grid grid-cols-1 md:grid-cols-5 gap-3 text-xs">
-                <div class="p-3 bg-slate-50 rounded-xl border border-slate-200">
-                  <strong class="text-[#0b3d23] block mb-1">SYS-01: Combusti&oacute;n</strong>
-                  <p class="text-slate-600 text-[11px] mb-1">BL-101, T-101, B-101 y WHB-101.</p>
-                  <span class="inline-block px-1.5 py-0.5 bg-slate-200 text-slate-800 font-mono text-[10px] rounded">Corr. [1]-[5],[18]</span>
-                </div>
-                <div class="p-3 bg-slate-50 rounded-xl border border-slate-200">
-                  <strong class="text-[#0b3d23] block mb-1">SYS-02: Bucle 1-3</strong>
-                  <p class="text-slate-600 text-[11px] mb-1">R-101 Lechos 1-3, WHB-102, HX-101, ECO-101.</p>
-                  <span class="inline-block px-1.5 py-0.5 bg-slate-200 text-slate-800 font-mono text-[10px] rounded">Corr. [6]-[13],[19]</span>
-                </div>
-                <div class="p-3 bg-slate-50 rounded-xl border border-slate-200">
-                  <strong class="text-[#0b3d23] block mb-1">SYS-03: Abs. Intermedia</strong>
-                  <p class="text-slate-600 text-[11px] mb-1">Torre T-201, Lecho 4 de R-101, ECO-102.</p>
-                  <span class="inline-block px-1.5 py-0.5 bg-slate-200 text-slate-800 font-mono text-[10px] rounded">Corr. [13],[20],[21],[14]</span>
-                </div>
-                <div class="p-3 bg-slate-50 rounded-xl border border-slate-200">
-                  <strong class="text-[#0b3d23] block mb-1">SYS-04: Abs. Final</strong>
-                  <p class="text-slate-600 text-[11px] mb-1">Torre T-202, Demisters y Chimenea.</p>
-                  <span class="inline-block px-1.5 py-0.5 bg-slate-200 text-slate-800 font-mono text-[10px] rounded">Corr. [15],[22]</span>
-                </div>
-                <div class="p-3 bg-slate-50 rounded-xl border border-slate-200">
-                  <strong class="text-[#0b3d23] block mb-1">SYS-05: &Aacute;cido &amp; Almac&eacute;n</strong>
-                  <p class="text-slate-600 text-[11px] mb-1">C&aacute;ntara TK-101, Agua [28], E-101, TK-102.</p>
-                  <span class="inline-block px-1.5 py-0.5 bg-slate-200 text-slate-800 font-mono text-[10px] rounded">Corr. [16],[20],[23]-[29]</span>
-                </div>
-              </div>
+            <div class="grid grid-cols-2 sm:grid-cols-5 gap-2 text-xs">
+              <div class="bg-white p-2.5 rounded-xl border border-slate-200 shadow-sm"><strong class="text-[#0b3d23] block text-xs font-bold">SYS-01: Combusti&oacute;n</strong><span class="text-slate-600 text-[10px]">BL-101, T-101, B-101, WHB-101</span></div>
+              <div class="bg-white p-2.5 rounded-xl border border-slate-200 shadow-sm"><strong class="text-[#0b3d23] block text-xs font-bold">SYS-02: Bucle 1-3</strong><span class="text-slate-600 text-[10px]">R-101 (1-3), WHB-102, HX-101</span></div>
+              <div class="bg-white p-2.5 rounded-xl border border-slate-200 shadow-sm"><strong class="text-[#0b3d23] block text-xs font-bold">SYS-03: Abs. Interm.</strong><span class="text-slate-600 text-[10px]">T-201, Lecho 4, ECO-102</span></div>
+              <div class="bg-white p-2.5 rounded-xl border border-slate-200 shadow-sm"><strong class="text-[#0b3d23] block text-xs font-bold">SYS-04: Abs. Final</strong><span class="text-slate-600 text-[10px]">T-202, Demisters, Chimenea</span></div>
+              <div class="bg-white p-2.5 rounded-xl border border-slate-200 shadow-sm"><strong class="text-[#0b3d23] block text-xs font-bold">SYS-05: &Aacute;cido &amp; Tanques</strong><span class="text-slate-600 text-[10px]">TK-101, E-101, TK-102</span></div>
             </div>
-            <div class="bg-[#0b3d23] text-white p-4 rounded-xl border-l-4 border-[#e5a93b] flex flex-col sm:flex-row items-center justify-between gap-3 text-xs">
-              <div>
-                <strong class="text-[#e5a93b] block text-sm">Evaluaci&oacute;n de Riesgo en 3 Estados Temporales:</strong>
-                <p class="text-slate-200 mt-0.5">
-                  1. <strong>Worst Credible:</strong> Efecto sin salvaguardas. &bull; 2. <strong>Current Risk:</strong> Con barreras de dise&ntilde;o base. &bull; 3. <strong>Residual Risk:</strong> Tras recomendaciones <strong>ALARP</strong>.
-                </p>
-              </div>
-              <div class="flex items-center space-x-1 font-bold text-[11px] flex-shrink-0">
-                <span class="px-2 py-0.5 rounded bg-red-600 text-white">Inaceptable</span>
-                <span class="px-2 py-0.5 rounded bg-[#e5a93b] text-[#0b3d23]">ALARP</span>
-                <span class="px-2 py-0.5 rounded bg-emerald-600 text-white">Aceptable</span>
-              </div>
+            <div class="bg-[#0b3d23] text-white p-3 rounded-xl border-l-4 border-[#e5a93b] flex items-center justify-between text-xs">
+              <span><strong>Criterio de Riesgo ALARP en 3 Fases:</strong> 1. Worst Credible (Sin defensas) &bull; 2. Current Risk (Dise&ntilde;o base) &bull; 3. Residual Risk (Con acciones ISD).</span>
+              <span class="font-bold text-[#e5a93b] ml-2 flex-shrink-0">Tolerabilidad Demostrada</span>
             </div>
           </div>
         `
@@ -425,10 +389,10 @@
         title: "HAZID Worksheet (SYS 1 & 2)",
         render: () => `
           <div class="space-y-4">
-            <div class="border-b border-slate-200 pb-3 flex items-center justify-between">
+            <div class="border-b border-slate-200 pb-2.5 flex items-center justify-between">
               <div>
                 <span class="text-xs font-bold uppercase tracking-wider text-[#e5a93b]">M&oacute;dulo 5 &bull; Registro Oficial HAZID</span>
-                <h2 class="text-2xl font-black text-[#0b3d23]">Hoja de Trabajo: Sistemas SYS-01 y SYS-02</h2>
+                <h2 class="text-xl sm:text-2xl font-black text-[#0b3d23]">Hoja de Trabajo: Sistemas SYS-01 y SYS-02</h2>
               </div>
               <span class="text-xs font-bold px-3 py-1 bg-slate-100 text-slate-700 rounded-full">Anexo C EGPC</span>
             </div>
@@ -441,51 +405,51 @@
                       <th>Guideword &amp; Equipo</th>
                       <th>Causa Ra&iacute;z (Threat)</th>
                       <th>Consecuencia Cre&iacute;ble</th>
-                      <th class="text-center">Riesgo Inicial</th>
+                      <th class="text-center">Inicial</th>
                       <th>Salvaguardas Existentes</th>
                       <th>Oportunidad ISD &amp; Acci&oacute;n Recomendada</th>
-                      <th class="text-center">Riesgo Resid.</th>
+                      <th class="text-center">Resid.</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
                       <td class="text-center font-bold font-mono-code text-[#0b3d23]">1.1</td>
-                      <td><strong class="text-[#0b3d23] block">20.3 Gas T&oacute;xico (SO<sub>2</sub>)</strong><span class="text-slate-500 text-[11px]">Quemador B-101 / Azufre [4]</span></td>
-                      <td>Fallo de ignici&oacute;n en quemador con alimentaci&oacute;n continua de azufre l&iacute;quido [4] y aire [3].</td>
-                      <td>P&eacute;rdida de contenci&oacute;n de gases de SO<sub>2</sub> (&gt;11%). <strong>Nube t&oacute;xica perimetral</strong> y quemaduras t&eacute;rmicas.</td>
+                      <td><strong class="text-[#0b3d23] block">20.3 Gas T&oacute;xico (SO<sub>2</sub>)</strong><span class="text-slate-500 text-[11px]">Quemador B-101</span></td>
+                      <td>Fallo de ignici&oacute;n con flujo continuo de azufre fundido [4] y aire [3].</td>
+                      <td>P&eacute;rdida de contenci&oacute;n de gas caliente SO<sub>2</sub> (&gt;11%). <strong>Nube t&oacute;xica perimetral</strong>.</td>
                       <td class="text-center"><span class="px-2 py-0.5 rounded badge-high font-bold text-[11px]">4C - ALTO</span></td>
-                      <td>&bull; Detector de llama UV en B-101.<br>&bull; V&aacute;lvula de corte r&aacute;pido ESD en azufre l&iacute;quido.</td>
-                      <td><strong>ISD (Simplificaci&oacute;n):</strong> Lazo BMS con enclavamiento SIL-2. Corte de azufre en &lt;2 seg si se pierde llama. Detectores fijos de SO<sub>2</sub> con alarma sonora.</td>
+                      <td>&bull; Scanner UV de llama en B-101.<br>&bull; V&aacute;lvula ESD en l&iacute;nea de azufre.</td>
+                      <td><strong>ISD (Simplificaci&oacute;n):</strong> Sistema BMS con corte SIL-2 de azufre en &lt;2s por p&eacute;rdida de llama. Detectores perimetrales SO<sub>2</sub>.</td>
                       <td class="text-center"><span class="px-2 py-0.5 rounded badge-med font-bold text-[11px]">4A - ALARP</span></td>
                     </tr>
                     <tr>
                       <td class="text-center font-bold font-mono-code text-[#0b3d23]">1.2</td>
-                      <td><strong class="text-[#0b3d23] block">42.3 Sobrepresi&oacute;n</strong><span class="text-slate-500 text-[11px]">Caldera I WHB-101 / Vapor</span></td>
-                      <td>Rotura de tubos por choque t&eacute;rmico (gas a 1150 &deg;C) o p&eacute;rdida de agua de alimentaci&oacute;n (BFW).</td>
-                      <td>Ingreso de agua l&iacute;quida al flujo de SO<sub>2</sub>, formaci&oacute;n violenta de niebla &aacute;cida y <strong>explosi&oacute;n f&iacute;sica por sobrepresi&oacute;n</strong>.</td>
+                      <td><strong class="text-[#0b3d23] block">42.3 Sobrepresi&oacute;n</strong><span class="text-slate-500 text-[11px]">Caldera I WHB-101</span></td>
+                      <td>Rotura de tubos por choque t&eacute;rmico (1150 &deg;C) o fallo de agua BFW.</td>
+                      <td>Ingreso de agua l&iacute;quida a gas SO<sub>2</sub>; formaci&oacute;n violenta de niebla y <strong>sobrepresi&oacute;n f&iacute;sica</strong>.</td>
                       <td class="text-center"><span class="px-2 py-0.5 rounded badge-high font-bold text-[11px]">4C - ALTO</span></td>
-                      <td>&bull; V&aacute;lvula de seguridad PSV en vapor.<br>&bull; Enclavamiento de nivel bajo de domo (LSLL).</td>
-                      <td><strong>ISD (Moderaci&oacute;n):</strong> Dise&ntilde;o pirotubular refractado para amortiguar gradientes t&eacute;rmicos. L&oacute;gica 2oo3 para parada de quemador por nivel bajo en WHB.</td>
+                      <td>&bull; V&aacute;lvulas PSV en domo de vapor.<br>&bull; Switch de nivel bajo LSLL.</td>
+                      <td><strong>ISD (Moderaci&oacute;n):</strong> Dise&ntilde;o pirotubular refractado. L&oacute;gica 2oo3 por bajo nivel en domo que dispara quemador.</td>
                       <td class="text-center"><span class="px-2 py-0.5 rounded badge-med font-bold text-[11px]">4A - ALARP</span></td>
                     </tr>
                     <tr>
                       <td class="text-center font-bold font-mono-code text-[#0b3d23]">2.1</td>
-                      <td><strong class="text-[#0b3d23] block">42.5 Sobrecalentamiento</strong><span class="text-slate-500 text-[11px]">Convertidor R-101 (Lecho 1)</span></td>
-                      <td>Reacci&oacute;n exot&eacute;rmica SO<sub>2</sub> &rarr; SO<sub>3</sub> descontrolada por exceso de SO<sub>2</sub> en entrada (&gt;12%).</td>
-                      <td><strong>Thermal Runaway</strong> en Lecho 1 (T &gt; 630 &deg;C). Sinterizaci&oacute;n irreversible de V<sub>2</sub>O<sub>5</sub> y grietas en carcasa inoxidable.</td>
+                      <td><strong class="text-[#0b3d23] block">42.5 Sobrecalentamiento</strong><span class="text-slate-500 text-[11px]">Convertidor R-101 Lecho 1</span></td>
+                      <td>Reacci&oacute;n exot&eacute;rmica descontrolada por SO<sub>2</sub> &gt;12% vol.</td>
+                      <td><strong>Thermal Runaway</strong> (&gt;630 &deg;C). Sinterizaci&oacute;n irreversible de catalizador V<sub>2</sub>O<sub>5</sub> y grietas.</td>
                       <td class="text-center"><span class="px-2 py-0.5 rounded badge-high font-bold text-[11px]">4C - ALTO</span></td>
-                      <td>&bull; Termocuplas multipunto en lecho.<br>&bull; Inyecci&oacute;n de aire de atemperaci&oacute;n (quench air).</td>
-                      <td><strong>ISD (Sustituci&oacute;n/Moderaci&oacute;n):</strong> Catalizador de Cesio en capa superior (inicia a 390 &deg;C). Enclavamiento TSHH que corta soplador BL-101 y azufre.</td>
+                      <td>&bull; Termocuplas multipunto en lecho.<br>&bull; Aire de atemperaci&oacute;n (quench).</td>
+                      <td><strong>ISD (Sustituci&oacute;n):</strong> Catalizador de Cesio en capa superior (inicia a 390 &deg;C). Enclavamiento TSHH que interrumpe azufre y soplador.</td>
                       <td class="text-center"><span class="px-2 py-0.5 rounded badge-med font-bold text-[11px]">4A - ALARP</span></td>
                     </tr>
                     <tr>
                       <td class="text-center font-bold font-mono-code text-[#0b3d23]">2.2</td>
                       <td><strong class="text-[#0b3d23] block">44.4 Ataque Qu&iacute;mico</strong><span class="text-slate-500 text-[11px]">Intercambiador HX-101</span></td>
-                      <td>Condensaci&oacute;n &aacute;cida durante paradas o arranques fr&iacute;os por debajo del punto de roc&iacute;o.</td>
-                      <td>Fisura en tubos, bypass interno de gas no convertido y emisiones elevadas de SO<sub>2</sub> sin reaccionar hacia chimenea.</td>
+                      <td>Condensaci&oacute;n &aacute;cida en paradas o arranques por debajo del punto de roc&iacute;o.</td>
+                      <td>Fisura en tubos, bypass interno de gas no convertido y emisi&oacute;n de SO<sub>2</sub> a chimenea.</td>
                       <td class="text-center"><span class="px-2 py-0.5 rounded badge-med font-bold text-[11px]">3C - MEDIO</span></td>
-                      <td>&bull; Control de temperatura por encima del punto de roc&iacute;o (&gt;220 &deg;C).</td>
-                      <td><strong>ISD (Minimizaci&oacute;n):</strong> Intercambiador compacto soldado de alta resistencia. Procedimiento de precalentamiento con aire seco antes del gas.</td>
+                      <td>&bull; Control de temperatura T &gt; 220 &deg;C.</td>
+                      <td><strong>ISD (Minimizaci&oacute;n):</strong> Intercambiador soldado compacto. Procedimiento de secado y calentamiento previo con gas caliente.</td>
                       <td class="text-center"><span class="px-2 py-0.5 rounded badge-low font-bold text-[11px]">3A - BAJO</span></td>
                     </tr>
                   </tbody>
@@ -500,10 +464,10 @@
         title: "HAZID Worksheet (SYS 3, 4 & 5)",
         render: () => `
           <div class="space-y-4">
-            <div class="border-b border-slate-200 pb-3 flex items-center justify-between">
+            <div class="border-b border-slate-200 pb-2.5 flex items-center justify-between">
               <div>
-                <span class="text-xs font-bold uppercase tracking-wider text-[#e5a93b]">M&oacute;dulo 6 &bull; Registro Oficial HAZID</span>
-                <h2 class="text-2xl font-black text-[#0b3d23]">Hoja de Trabajo: Sistemas SYS-03, SYS-04 y SYS-05</h2>
+                <span class="text-xs font-bold uppercase tracking-wider text-[#e5a93b]">M&oacute;dulo 5 &bull; Registro Oficial HAZID</span>
+                <h2 class="text-xl sm:text-2xl font-black text-[#0b3d23]">Hoja de Trabajo: Sistemas SYS-03, SYS-04 y SYS-05</h2>
               </div>
               <span class="text-xs font-bold px-3 py-1 bg-slate-100 text-slate-700 rounded-full">Anexo C EGPC</span>
             </div>
@@ -516,51 +480,51 @@
                       <th>Guideword &amp; Equipo</th>
                       <th>Causa Ra&iacute;z (Threat)</th>
                       <th>Consecuencia Cre&iacute;ble</th>
-                      <th class="text-center">Riesgo Inicial</th>
+                      <th class="text-center">Inicial</th>
                       <th>Salvaguardas Existentes</th>
                       <th>Oportunidad ISD &amp; Acci&oacute;n Recomendada</th>
-                      <th class="text-center">Riesgo Resid.</th>
+                      <th class="text-center">Resid.</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
                       <td class="text-center font-bold font-mono-code text-[#0b3d23]">3.1</td>
-                      <td><strong class="text-[#0b3d23] block">39.1 Emisi&oacute;n al Aire</strong><span class="text-slate-500 text-[11px]">Torre T-202 / Chimenea [22]</span></td>
-                      <td>Fallo total de bombas de recirculaci&oacute;n de &aacute;cido sulf&uacute;rico hacia el distribuidor de T-202.</td>
-                      <td>Emisi&oacute;n descontrolada de <strong>SO<sub>3</sub> libre por chimenea</strong>; nube densa de niebla &aacute;cida; riesgo comunitario y clausura legal.</td>
+                      <td><strong class="text-[#0b3d23] block">39.1 Emisi&oacute;n al Aire</strong><span class="text-slate-500 text-[11px]">Torre T-202 / Chimenea</span></td>
+                      <td>Fallo de bombas de irrigaci&oacute;n de &aacute;cido concentrado a tope de T-202.</td>
+                      <td>Escape de <strong>SO<sub>3</sub> libre por chimenea</strong>; niebla &aacute;cida severa y violaci&oacute;n regulatoria.</td>
                       <td class="text-center"><span class="px-2 py-0.5 rounded badge-high font-bold text-[11px]">5C - CR&Iacute;TICO</span></td>
-                      <td>&bull; Bombas 1+1 con respaldo autom&aacute;tico.<br>&bull; Sensor de caudal bajo de irrigaci&oacute;n (FALL).</td>
-                      <td><strong>ISD (Simplificaci&oacute;n):</strong> Distribuidores de canaleta por gravedad. Enclavamiento ESD: Si el caudal de &aacute;cido cae por &gt;30s, corte total de azufre. CEMS en chimenea.</td>
+                      <td>&bull; Bombas 1+1 respaldo autom&aacute;tico.<br>&bull; Alarma de bajo flujo FALL.</td>
+                      <td><strong>ISD (Simplificaci&oacute;n):</strong> Distribuidores de canaleta por gravedad. Enclavamiento ESD: Si el flujo cae &gt;30s, corte total de azufre. CEMS en chimenea.</td>
                       <td class="text-center"><span class="px-2 py-0.5 rounded badge-med font-bold text-[11px]">5A - ALARP</span></td>
                     </tr>
                     <tr>
                       <td class="text-center font-bold font-mono-code text-[#0b3d23]">5.1</td>
-                      <td><strong class="text-[#0b3d23] block">23.3 Sustancia Corrosiva</strong><span class="text-slate-500 text-[11px]">C&aacute;ntara TK-101 / Agua [28]</span></td>
-                      <td>Inyecci&oacute;n incontrolada de agua de diluci&oacute;n [28] sobre &aacute;cido caliente sin mezcla turbulenta adecuada.</td>
-                      <td><strong>Ebullici&oacute;n explosiva puntual</strong> (<em>Acid Splash</em>); eyecci&oacute;n de &aacute;cido hirviente a 115 &deg;C; riesgo letal de quemadura qu&iacute;mica.</td>
+                      <td><strong class="text-[#0b3d23] block">23.3 Sustancia Corrosiva</strong><span class="text-slate-500 text-[11px]">C&aacute;ntara TK-101 / Diluci&oacute;n</span></td>
+                      <td>Inyecci&oacute;n incontrolada de agua [28] sobre &aacute;cido caliente sin mezcla turbulenta.</td>
+                      <td><strong>Ebullici&oacute;n explosiva puntual</strong> (<em>Acid Splash</em>); salpicadura a 115 &deg;C y da&ntilde;o letal.</td>
                       <td class="text-center"><span class="px-2 py-0.5 rounded badge-high font-bold text-[11px]">4C - ALTO</span></td>
-                      <td>&bull; Mezclador est&aacute;tico en l&iacute;nea.<br>&bull; Ratio controller de flujo &aacute;cido/agua.</td>
-                      <td><strong>ISD (Moderaci&oacute;n &amp; Simplificaci&oacute;n):</strong> Mezclador est&aacute;tico de aleaci&oacute;n Hastelloy C-276. V&aacute;lvula de agua <em>Fail-Closed</em> interbloqueada con el flujo de &aacute;cido.</td>
+                      <td>&bull; Mezclador est&aacute;tico en l&iacute;nea.<br>&bull; Ratio controller &aacute;cido/agua.</td>
+                      <td><strong>ISD (Moderaci&oacute;n/Simplificaci&oacute;n):</strong> C&aacute;mara de mezcla en aleaci&oacute;n Hastelloy C-276. V&aacute;lvula de agua Fail-Closed interbloqueada al flujo de &aacute;cido.</td>
                       <td class="text-center"><span class="px-2 py-0.5 rounded badge-med font-bold text-[11px]">4A - ALARP</span></td>
                     </tr>
                     <tr>
                       <td class="text-center font-bold font-mono-code text-[#0b3d23]">5.2</td>
                       <td><strong class="text-[#0b3d23] block">45.1 L&iacute;quidos Inflamables</strong><span class="text-slate-500 text-[11px]">Tanque Almac&eacute;n TK-102</span></td>
-                      <td>Diluci&oacute;n accidental (&lt;92%) con ataque corrosivo al acero al carbono y desprendimiento continuo de H<sub>2</sub> gas.</td>
-                      <td>Acumulaci&oacute;n de H<sub>2</sub> (LEL 4%) en c&uacute;pula con ignici&oacute;n electrost&aacute;tica; <strong>explosi&oacute;n del techo y derrame masivo</strong>.</td>
+                      <td>Diluci&oacute;n accidental (&lt;92%) atacando acero carbono con desprendimiento de gas H<sub>2</sub>.</td>
+                      <td>Acumulaci&oacute;n de H<sub>2</sub> (LEL 4%) en c&uacute;pula con ignici&oacute;n; <strong>explosi&oacute;n de c&uacute;pula y derrame masivo</strong>.</td>
                       <td class="text-center"><span class="px-2 py-0.5 rounded badge-high font-bold text-[11px]">5B - ALTO</span></td>
-                      <td>&bull; Venteos libres cuello de ganso.<br>&bull; Muro de contenci&oacute;n perimetral.</td>
-                      <td><strong>ISD (Minimizaci&oacute;n):</strong> Compartimentaci&oacute;n de almacenamiento en tanques medianos. Purga continua con N<sub>2</sub> seco en c&uacute;pula, arrestallamas y detector de H<sub>2</sub>.</td>
+                      <td>&bull; Venteos de cuello de ganso.<br>&bull; Dique de hormig&oacute;n perimetral.</td>
+                      <td><strong>ISD (Minimizaci&oacute;n):</strong> Compartimentaci&oacute;n de tanques. Purga continua con N<sub>2</sub> seco en c&uacute;pula, arrestallamas y detector LEL de H<sub>2</sub>.</td>
                       <td class="text-center"><span class="px-2 py-0.5 rounded badge-med font-bold text-[11px]">5A - ALARP</span></td>
                     </tr>
                     <tr>
                       <td class="text-center font-bold font-mono-code text-[#0b3d23]">5.3</td>
                       <td><strong class="text-[#0b3d23] block">46.1 P&eacute;rdida Contenci&oacute;n</strong><span class="text-slate-500 text-[11px]">Tanque TK-102 / Despacho</span></td>
-                      <td>Fallo en transmisor de nivel o error en maniobra de transferencia; sobrellenado de tanque.</td>
-                      <td>Derrame masivo de &aacute;cido concentrado al suelo; riesgo severo de da&ntilde;o ambiental a acu&iacute;fero fre&aacute;tico.</td>
+                      <td>Fallo de transmisor de nivel o error en llenado; sobrellenado de tanque.</td>
+                      <td>Derrame de &aacute;cido sulf&uacute;rico al terreno; contaminaci&oacute;n severa de acu&iacute;feros fre&aacute;ticos.</td>
                       <td class="text-center"><span class="px-2 py-0.5 rounded badge-high font-bold text-[11px]">4C - ALTO</span></td>
-                      <td>&bull; Medidor de nivel por radar (LT-102).<br>&bull; Cubeto de retenci&oacute;n de hormig&oacute;n al 110%.</td>
-                      <td><strong>Barrera Pasiva:</strong> Cubeto con baldosas anti&aacute;cidas y canalizaci&oacute;n a balsa de cal. Switch independiente de nivel muy alto (LSHH) SIL-2 de corte.</td>
+                      <td>&bull; Nivel continuo por radar.<br>&bull; Cubeto estanco al 110%.</td>
+                      <td><strong>Barrera Pasiva:</strong> Cubeto con baldosas anti&aacute;cidas y drenaje a fosa de cal. Switch independiente LSHH SIL-2 de corte.</td>
                       <td class="text-center"><span class="px-2 py-0.5 rounded badge-med font-bold text-[11px]">4A - ALARP</span></td>
                     </tr>
                   </tbody>
@@ -571,100 +535,255 @@
         `
       },
       {
-        id: "lopa-mini-hazop",
-        title: "Mini-HAZOP, LOPA & Cierre ALARP",
+        id: "fmea-criticos",
+        title: "FMEA en Equipos Cr\u00EDticos (R-101 & TK-101)",
         render: () => `
-          <div class="space-y-5">
-            <div class="border-b border-slate-200 pb-3 flex items-center justify-between">
+          <div class="space-y-4">
+            <div class="border-b border-slate-200 pb-2.5 flex items-center justify-between">
               <div>
-                <span class="text-xs font-bold uppercase tracking-wider text-[#e5a93b]">M&oacute;dulo 7 &bull; Verificaci&oacute;n &amp; Seguimiento</span>
-                <h2 class="text-2xl font-black text-[#0b3d23]">Mini-HAZOP (Nodo Diluci&oacute;n) y Plan de Cierre ALARP</h2>
+                <span class="text-xs font-bold uppercase tracking-wider text-[#e5a93b]">M&oacute;dulo 6 &bull; An&aacute;lisis de Fallos y Modos de Falla</span>
+                <h2 class="text-xl sm:text-2xl font-black text-[#0b3d23]">FMEA: Convertidor R-101 y C&aacute;ntara de Mezcla TK-101</h2>
               </div>
-              <span class="text-xs font-bold px-3 py-1 bg-purple-100 text-purple-800 rounded-full">Capas IPL &amp; Action Tracking</span>
+              <span class="text-xs font-bold px-3 py-1 bg-purple-100 text-purple-800 rounded-full">IEC 60812 / Conexi&oacute;n HAZID</span>
             </div>
-            <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
-              <div class="flex items-center justify-between mb-3">
-                <h3 class="text-sm font-bold text-[#0b3d23]">Mini-HAZOP: Inyecci&oacute;n de Agua [28] en C&aacute;ntara TK-101</h3>
-                <span class="text-[11px] font-mono text-slate-500">Nodo N-05 | Intenci&oacute;n: Diluci&oacute;n controlada a 98.4% H2SO4 a 85 &deg;C</span>
-              </div>
-              <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs">
-                <div class="p-3 bg-slate-50 rounded-xl border border-slate-200">
-                  <span class="px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold font-mono text-[10px] uppercase">MORE + FLOW</span>
-                  <strong class="block text-slate-800 mt-2 mb-1">Diluci&oacute;n Excesiva de Agua</strong>
-                  <p class="text-slate-600 mb-2">Exceso de agua genera calentamiento desmedido y ataque corrosivo liberando hidr&oacute;geno inflamable.</p>
-                  <div class="p-2 bg-white rounded border border-slate-200 text-[11px]">
-                    <strong>IPL:</strong> Lazo de control por conductividad + TAH-101 cerrando v&aacute;lvula solenoide <em>Fail-Closed</em>.
-                  </div>
-                </div>
-                <div class="p-3 bg-slate-50 rounded-xl border border-slate-200">
-                  <span class="px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold font-mono text-[10px] uppercase">NO + FLOW</span>
-                  <strong class="block text-slate-800 mt-2 mb-1">Falta de Agua de Reposici&oacute;n</strong>
-                  <p class="text-slate-600 mb-2">Sobreconcentraci&oacute;n de &aacute;cido; formaci&oacute;n de &Oacute;leum libre en T-201/202 con desprendimiento de SO<sub>3</sub> a chimenea.</p>
-                  <div class="p-2 bg-white rounded border border-slate-200 text-[11px]">
-                    <strong>IPL:</strong> Alarma FAL-28; si persiste &gt;60s, enclavamiento reduce azufre al m&iacute;nimo t&eacute;cnico en quemador.
-                  </div>
-                </div>
-                <div class="p-3 bg-slate-50 rounded-xl border border-slate-200">
-                  <span class="px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold font-mono text-[10px] uppercase">REVERSE + FLOW</span>
-                  <strong class="block text-slate-800 mt-2 mb-1">Retorno de &Aacute;cido a L&iacute;nea de Agua</strong>
-                  <p class="text-slate-600 mb-2">P&eacute;rdida de presi&oacute;n en agua permite al &aacute;cido caliente ingresar a la red de servicios generales de la planta.</p>
-                  <div class="p-2 bg-white rounded border border-slate-200 text-[11px]">
-                    <strong>ISD Pasivo:</strong> Doble v&aacute;lvula <em>check</em> de Hastelloy con venteo intermedio y switch de pH.
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
-              <h3 class="text-sm font-bold text-[#0b3d23] mb-3">Plan de Acci&oacute;n y Seguimiento de Recomendaciones (EGPC Cap. 9.4)</h3>
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
               <div class="overflow-x-auto">
-                <table class="w-full text-xs text-left border-collapse">
+                <table class="w-full hazid-table border-collapse">
                   <thead>
-                    <tr class="bg-slate-100 text-slate-700 uppercase font-semibold">
-                      <th class="p-2.5 rounded-l-lg">ID</th>
-                      <th class="p-2.5">Recomendaci&oacute;n de Seguridad (What, Where &amp; Why)</th>
-                      <th class="p-2.5">Responsable</th>
-                      <th class="p-2.5">Etapa</th>
-                      <th class="p-2.5 rounded-r-lg text-center">Estado / Criterio</th>
+                    <tr>
+                      <th>Equipo Cr&iacute;tico</th>
+                      <th>Modo de Falla</th>
+                      <th>Efecto Local y en Sistema</th>
+                      <th class="text-center">S</th>
+                      <th class="text-center">O</th>
+                      <th class="text-center">D</th>
+                      <th class="text-center">RPN</th>
+                      <th>M&eacute;todo de Detecci&oacute;n Actual</th>
+                      <th>Acci&oacute;n Mitigante / RPN Final</th>
                     </tr>
                   </thead>
-                  <tbody class="divide-y divide-slate-100 text-slate-700">
+                  <tbody>
                     <tr>
-                      <td class="p-2.5 font-bold font-mono text-[#0b3d23]">A-01</td>
-                      <td class="p-2.5">Implementar enclavamiento SIL-2 de corte de azufre en &lt;2 seg por p&eacute;rdida de llama en quemador B-101.</td>
-                      <td class="p-2.5">Instrumentaci&oacute;n &amp; Control</td>
-                      <td class="p-2.5">FEED / Detalle</td>
-                      <td class="p-2.5 text-center"><span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-semibold">ALARP Aprobado</span></td>
+                      <td><strong class="text-[#0b3d23] block font-bold">R-101 (Lecho 1)</strong><span class="text-slate-500 text-[10px]">Convertidor Catal&iacute;tico</span></td>
+                      <td>Fallo de control de alimentaci&oacute;n; sobreconcentraci&oacute;n de SO<sub>2</sub> &gt;12% vol.</td>
+                      <td>Exotermia excesiva (T &gt; 630 &deg;C); sinterizaci&oacute;n de V<sub>2</sub>O<sub>5</sub>; deformaci&oacute;n mec&aacute;nica de carcasa SS304H y fuga masiva de gas.</td>
+                      <td class="text-center font-bold text-red-700">9</td>
+                      <td class="text-center">4</td>
+                      <td class="text-center">4</td>
+                      <td class="text-center font-bold bg-red-100 text-red-900">144</td>
+                      <td>Termocuplas individuales tipo K en lecho con alarma TAH en DCS.</td>
+                      <td>Termocuplas multipunto redundantes con l&oacute;gica 2oo3 conectada a SIF de corte de azufre y quench r&aacute;pido. <strong>RPN: 36 (S:9, O:2, D:2)</strong>.</td>
                     </tr>
                     <tr>
-                      <td class="p-2.5 font-bold font-mono text-[#0b3d23]">A-02</td>
-                      <td class="p-2.5">Dimensionar la c&aacute;ntara TK-101 con holdup operativo reducido a 3-5 minutos (Principio ISD: Minimizaci&oacute;n).</td>
-                      <td class="p-2.5">Ingenier&iacute;a de Procesos</td>
-                      <td class="p-2.5">FEED</td>
-                      <td class="p-2.5 text-center"><span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-semibold">Cerrado en Dise&ntilde;o</span></td>
+                      <td><strong class="text-[#0b3d23] block font-bold">R-101 (Plato Soporte)</strong><span class="text-slate-500 text-[10px]">Grillas Catal&iacute;ticas</span></td>
+                      <td>Fatiga t&eacute;rmica y fluencia en grillas de soporte por arranques bruscos.</td>
+                      <td>Colapso parcial del lecho catal&iacute;tico; p&eacute;rdida de carga masiva (&Delta;P &gt; 15 kPa); sobrepresi&oacute;n en WHB-101.</td>
+                      <td class="text-center font-bold text-amber-700">8</td>
+                      <td class="text-center">3</td>
+                      <td class="text-center">5</td>
+                      <td class="text-center font-bold bg-amber-100 text-amber-900">120</td>
+                      <td>Transmisor diferencial de presi&oacute;n &Delta;P entre entrada y salida del reactor.</td>
+                      <td>Especificar grillas en acero refractario 1.4835 (253 MA); rampa programada de calentamiento &lt;50 &deg;C/h. <strong>RPN: 48 (S:8, O:2, D:3)</strong>.</td>
                     </tr>
                     <tr>
-                      <td class="p-2.5 font-bold font-mono text-[#0b3d23]">A-03</td>
-                      <td class="p-2.5">Instalar sistema de purga de N<sub>2</sub> inerte y sensores de H<sub>2</sub> LEL en c&uacute;pula de tanques TK-101 y TK-102.</td>
-                      <td class="p-2.5">Mec&aacute;nica &amp; Seguridad</td>
-                      <td class="p-2.5">Detallado</td>
-                      <td class="p-2.5 text-center"><span class="px-2 py-0.5 rounded badge-med font-semibold">En Proceso</span></td>
+                      <td><strong class="text-[#0b3d23] block font-bold">TK-101 (Inyecci&oacute;n)</strong><span class="text-slate-500 text-[10px]">C&aacute;ntara de Mezcla</span></td>
+                      <td>V&aacute;lvula de agua de diluci&oacute;n trabada abierta (Fallo mec&aacute;nico).</td>
+                      <td>Diluci&oacute;n r&aacute;pida (&lt;92%); calor de mezcla incontrolado; ebullici&oacute;n y generaci&oacute;n violenta de gas H<sub>2</sub> con corrosi&oacute;n de acero.</td>
+                      <td class="text-center font-bold text-red-700">9</td>
+                      <td class="text-center">4</td>
+                      <td class="text-center">5</td>
+                      <td class="text-center font-bold bg-red-100 text-red-900">180</td>
+                      <td>Medidor de conductividad en bucle y alarma de temperatura TAH-101.</td>
+                      <td>V&aacute;lvula de bloqueo r&aacute;pido Fail-Closed en serie comandada por SIS ante concentraci&oacute;n &lt;94% o T &gt;105 &deg;C. <strong>RPN: 36 (S:9, O:2, D:2)</strong>.</td>
                     </tr>
                     <tr>
-                      <td class="p-2.5 font-bold font-mono text-[#0b3d23]">A-04</td>
-                      <td class="p-2.5">Construir cubeto estanco al 110% de TK-102 con baldosas anti&aacute;cidas y drenaje a fosa de neutralizaci&oacute;n.</td>
-                      <td class="p-2.5">Ingenier&iacute;a Civil</td>
-                      <td class="p-2.5">Construcci&oacute;n</td>
-                      <td class="p-2.5 text-center"><span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-semibold">Especificado</span></td>
-                    </tr>
-                    <tr>
-                      <td class="p-2.5 font-bold font-mono text-[#0b3d23]">A-05</td>
-                      <td class="p-2.5">Integrar monitor continuo CEMS en chimenea [22] con disparo autom&aacute;tico ESD de planta ante escape de SO<sub>3</sub>.</td>
-                      <td class="p-2.5">Medio Ambiente &amp; SIS</td>
-                      <td class="p-2.5">Comisionamiento</td>
-                      <td class="p-2.5 text-center"><span class="px-2 py-0.5 rounded badge-med font-semibold">En Proceso</span></td>
+                      <td><strong class="text-[#0b3d23] block font-bold">TK-101 (Revestimiento)</strong><span class="text-slate-500 text-[10px]">Ladrillo Anti&aacute;cido / SX</span></td>
+                      <td>Fisura en membrana aislante o juntas de ladrillo por choque t&eacute;rmico.</td>
+                      <td>Ataque &aacute;cido al casco de acero estructural exterior; p&eacute;rdida de contenci&oacute;n catastr&oacute;fica en cubeto.</td>
+                      <td class="text-center font-bold text-red-700">8</td>
+                      <td class="text-center">3</td>
+                      <td class="text-center">5</td>
+                      <td class="text-center font-bold bg-amber-100 text-amber-900">120</td>
+                      <td>Inspecci&oacute;n visual en paradas y termograf&iacute;a infrarroja peri&oacute;dica exterior.</td>
+                      <td>Construcci&oacute;n &iacute;ntegra en aleaci&oacute;n austen&iacute;tica con 5% silicio (Saramet/SX) sin ladrillos; monitoreo continuo por c&aacute;maras t&eacute;rmicas fijas. <strong>RPN: 32 (S:8, O:2, D:2)</strong>.</td>
                     </tr>
                   </tbody>
                 </table>
+              </div>
+            </div>
+          </div>
+        `
+      },
+      {
+        id: "ventanas-operativas",
+        title: "Ventanas Operativas Seguras (SOW)",
+        render: () => `
+          <div class="space-y-4">
+            <div class="border-b border-slate-200 pb-2.5 flex items-center justify-between">
+              <div>
+                <span class="text-xs font-bold uppercase tracking-wider text-[#e5a93b]">M&oacute;dulo 7 &bull; L&iacute;mites Cr&iacute;ticos de Operaci&oacute;n</span>
+                <h2 class="text-xl sm:text-2xl font-black text-[#0b3d23]">Safe Operating Windows (SOW) &amp; Setpoints T&eacute;cnicos</h2>
+              </div>
+              <span class="text-xs font-bold px-3 py-1 bg-emerald-100 text-emerald-800 rounded-full">Sustentaci&oacute;n de Dise&ntilde;o 500 TPD</span>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <!-- SOW R-101 -->
+              <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm">
+                <div class="flex items-center justify-between pb-2 mb-2 border-b border-slate-100">
+                  <h3 class="text-sm font-extrabold text-[#0b3d23]">Ventana Segura: Convertidor R-101 (Lecho 1)</h3>
+                  <span class="text-[10px] font-mono bg-slate-100 px-2 py-0.5 rounded text-slate-700">Nodo N-02</span>
+                </div>
+                <div class="space-y-2 text-xs">
+                  <div class="p-2 bg-slate-50 rounded-xl border border-slate-200">
+                    <div class="flex justify-between font-bold text-slate-800"><span>Temperatura Entrada (T-In):</span><span class="font-mono text-[#0b3d23]">410 &ndash; 430 &deg;C</span></div>
+                    <p class="text-[11px] text-slate-600 mt-0.5"><strong>L&iacute;mite Bajo (TALL):</strong> 395 &deg;C (Cesio) / 415 &deg;C (V<sub>2</sub>O<sub>5</sub>). Si cae, se apaga la reacci&oacute;n.<br><strong>L&iacute;mite Alto (TAHH / Trip):</strong> 445 &deg;C. Dispara quench por exceso de entalp&iacute;a.</p>
+                  </div>
+                  <div class="p-2 bg-slate-50 rounded-xl border border-slate-200">
+                    <div class="flex justify-between font-bold text-slate-800"><span>Temperatura Pico Lecho (T-Peak):</span><span class="font-mono text-[#0b3d23]">590 &ndash; 610 &deg;C</span></div>
+                    <p class="text-[11px] text-slate-600 mt-0.5"><strong>Alarma Alta (TAH):</strong> 615 &deg;C. <strong>L&iacute;mite Cr&iacute;tico Trip (TSHH):</strong> 630 &deg;C.<br><em>Sustento:</em> Sobre 630 &deg;C ocurre la sinterizaci&oacute;n irreversible del soporte de s&iacute;lice y p&eacute;rdida de vanadio.</p>
+                  </div>
+                  <div class="p-2 bg-slate-50 rounded-xl border border-slate-200">
+                    <div class="flex justify-between font-bold text-slate-800"><span>Concentraci&oacute;n SO<sub>2</sub> Entrada:</span><span class="font-mono text-[#0b3d23]">10.5 &ndash; 11.5% vol</span></div>
+                    <p class="text-[11px] text-slate-600 mt-0.5"><strong>L&iacute;mite M&aacute;ximo (QAHH):</strong> 12.0% vol. Exceso de azufre genera desbalance estequiom&eacute;trico O<sub>2</sub>/SO<sub>2</sub> &lt; 0.8 y salto t&eacute;rmico destructivo.</p>
+                  </div>
+                </div>
+              </div>
+              <!-- SOW TK-101 -->
+              <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm">
+                <div class="flex items-center justify-between pb-2 mb-2 border-b border-slate-100">
+                  <h3 class="text-sm font-extrabold text-[#0b3d23]">Ventana Segura: C&aacute;ntara de Mezcla TK-101</h3>
+                  <span class="text-[10px] font-mono bg-slate-100 px-2 py-0.5 rounded text-slate-700">Nodo N-05</span>
+                </div>
+                <div class="space-y-2 text-xs">
+                  <div class="p-2 bg-slate-50 rounded-xl border border-slate-200">
+                    <div class="flex justify-between font-bold text-slate-800"><span>Concentraci&oacute;n de &Aacute;cido:</span><span class="font-mono text-[#0b3d23]">98.3 &ndash; 98.6% p/p</span></div>
+                    <p class="text-[11px] text-slate-600 mt-0.5"><strong>L&iacute;mite Bajo Cr&iacute;tico (ACLL / Trip):</strong> 97.0% (Alarma a 98.0%). Por debajo de 95% la corrosi&oacute;n de acero carbono salta de 0.05 a &gt;10 mm/a&ntilde;o.<br><strong>L&iacute;mite Alto (ACHH):</strong> 99.2% (Riesgo de emisi&oacute;n SO<sub>3</sub>).</p>
+                  </div>
+                  <div class="p-2 bg-slate-50 rounded-xl border border-slate-200">
+                    <div class="flex justify-between font-bold text-slate-800"><span>Temperatura de Operaci&oacute;n:</span><span class="font-mono text-[#0b3d23]">75 &ndash; 85 &deg;C</span></div>
+                    <p class="text-[11px] text-slate-600 mt-0.5"><strong>Alarma Alta (TAH):</strong> 92 &deg;C. <strong>Trip de Seguridad (TSHH):</strong> 105 &deg;C.<br><em>Sustento:</em> Disipaci&oacute;n limitada en E-101. A &gt;110 &deg;C la presi&oacute;n de vapor y niebla &aacute;cida aumentan exponencialmente.</p>
+                  </div>
+                  <div class="p-2 bg-slate-50 rounded-xl border border-slate-200">
+                    <div class="flex justify-between font-bold text-slate-800"><span>Nivel Operativo de C&aacute;ntara:</span><span class="font-mono text-[#0b3d23]">50 &ndash; 70%</span></div>
+                    <p class="text-[11px] text-slate-600 mt-0.5"><strong>Nivel Muy Bajo (LSLL):</strong> 25% (Trip de bombas de &aacute;cido para evitar cavitaci&oacute;n).<br><strong>Nivel Muy Alto (LSHH):</strong> 85% (Corte de alimentaci&oacute;n de agua y desv&iacute;o de &aacute;cido).</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        `
+      },
+      {
+        id: "automatizacion-control",
+        title: "Automatizaci\u00F3n & Control: BPCS vs. SIS",
+        render: () => `
+          <div class="space-y-4">
+            <div class="border-b border-slate-200 pb-2.5 flex items-center justify-between">
+              <div>
+                <span class="text-xs font-bold uppercase tracking-wider text-[#e5a93b]">M&oacute;dulo 8 &bull; Ingenier&iacute;a de Control y Seguridad Funcional</span>
+                <h2 class="text-xl sm:text-2xl font-black text-[#0b3d23]">Estrategia BPCS vs. SIS, Jerarqu&iacute;a de Alarmas &amp; Matriz Causa-Efecto</h2>
+              </div>
+              <span class="text-xs font-bold px-3 py-1 bg-purple-100 text-purple-800 rounded-full">IEC 61511 / ISA-84 / ISA-18.2</span>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <!-- BPCS vs SIS R-101 -->
+              <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm">
+                <h3 class="text-xs font-extrabold text-[#0b3d23] uppercase mb-2 flex items-center justify-between">
+                  <span>Nodo R-101: Control Normal vs. Funci&oacute;n SIF</span>
+                  <span class="font-mono text-[10px] bg-slate-100 px-1.5 py-0.5 rounded text-slate-700">SIF-01 (SIL-2)</span>
+                </h3>
+                <div class="space-y-2 text-xs">
+                  <div class="p-2.5 bg-blue-50/60 rounded-xl border border-blue-100">
+                    <strong class="text-blue-900 block font-bold mb-1">Capa 1: Control B&aacute;sico (BPCS en DCS)</strong>
+                    <p class="text-slate-700 text-[11px]">&bull; <strong>Lazo TIC-101:</strong> Modula v&aacute;lvula de bypass de vapor en WHB-101 para mantener entrada a Lecho 1 en 420 &plusmn; 5 &deg;C.<br>&bull; <strong>Lazo FIC-101:</strong> Controla soplador BL-101 asegurando ratio molar O<sub>2</sub>/SO<sub>2</sub> = 1.15.</p>
+                  </div>
+                  <div class="p-2.5 bg-red-50/60 rounded-xl border border-red-100">
+                    <strong class="text-red-900 block font-bold mb-1">Capa 2: Funci&oacute;n Instrumentada de Seguridad (SIS Independiente)</strong>
+                    <p class="text-slate-700 text-[11px]">&bull; <strong>Sensores:</strong> 3 transmisores de temperatura independientes (TIT-101A/B/C) con l&oacute;gica <strong>2oo3</strong>.<br>&bull; <strong>Causa:</strong> Temperatura en lecho &gt;630 &deg;C (TSHH) o p&eacute;rdida de flujo de aire.<br>&bull; <strong>Efecto:</strong> Cierre de v&aacute;lvula de corte r&aacute;pido ESDV-01 de azufre l&iacute;quido (&lt;2s) y apertura total de v&aacute;lvula de aire de quench FV-101Q.</p>
+                  </div>
+                </div>
+              </div>
+              <!-- BPCS vs SIS TK-101 -->
+              <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm">
+                <h3 class="text-xs font-extrabold text-[#0b3d23] uppercase mb-2 flex items-center justify-between">
+                  <span>Nodo TK-101: Control Normal vs. Funci&oacute;n SIF</span>
+                  <span class="font-mono text-[10px] bg-slate-100 px-1.5 py-0.5 rounded text-slate-700">SIF-02 (SIL-2)</span>
+                </h3>
+                <div class="space-y-2 text-xs">
+                  <div class="p-2.5 bg-blue-50/60 rounded-xl border border-blue-100">
+                    <strong class="text-blue-900 block font-bold mb-1">Capa 1: Control B&aacute;sico (BPCS en DCS)</strong>
+                    <p class="text-slate-700 text-[11px]">&bull; <strong>Lazo AIC-101 (Ratio Controller):</strong> Modula la v&aacute;lvula FV-28 de agua de diluci&oacute;n en funci&oacute;n de conductividad y densidad Coriolis para 98.4%.<br>&bull; <strong>Lazo LIC-101:</strong> Control de nivel en 60% modulando bombeo a torre T-201/202.</p>
+                  </div>
+                  <div class="p-2.5 bg-red-50/60 rounded-xl border border-red-100">
+                    <strong class="text-red-900 block font-bold mb-1">Capa 2: Funci&oacute;n Instrumentada de Seguridad (SIS Independiente)</strong>
+                    <p class="text-slate-700 text-[11px]">&bull; <strong>Sensores:</strong> Analizador de concentraci&oacute;n redundante AT-101B y sensor de nivel por radar LT-101B.<br>&bull; <strong>Causa:</strong> Concentraci&oacute;n &lt;95% (ACLL), nivel &gt;85% (LSHH) o parada de bombas de &aacute;cido.<br>&bull; <strong>Efecto:</strong> Disparo de solenoide de despresurizaci&oacute;n que cierra v&aacute;lvula ESDV-28 de agua en posici&oacute;n <strong>Fail-Closed</strong> inmediata.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Jerarqu??a de Alarmas ISA-18.2 -->
+            <div class="bg-white p-3 rounded-xl border border-slate-200 shadow-sm text-xs flex flex-col sm:flex-row items-center justify-between gap-2">
+              <div class="text-slate-700">
+                <strong>Jerarqu&iacute;a de Alarmas (ISA-18.2):</strong>
+                <span class="text-slate-600">Prioridad 3 (Informativa/Baja) &rarr; Prioridad 2 (Operativa/Media: requerimiento de intervenci&oacute;n &lt;10 min) &rarr; <strong>Prioridad 1 (Cr&iacute;tica/Interlock SIS: acci&oacute;n autom&aacute;tica &lt;2s)</strong>.</span>
+              </div>
+              <div class="font-mono text-[11px] bg-slate-100 px-3 py-1 rounded-lg text-slate-800 font-bold flex-shrink-0">Trazabilidad P&amp;ID Garantizada</div>
+            </div>
+          </div>
+        `
+      },
+      {
+        id: "bibliografia",
+        title: "Referencias Bibliogr\u00E1ficas & Normativas",
+        render: () => `
+          <div class="space-y-4">
+            <div class="border-b border-slate-200 pb-2.5 flex items-center justify-between">
+              <div>
+                <span class="text-xs font-bold uppercase tracking-wider text-[#e5a93b]">M&oacute;dulo 9 &bull; Sustentaci&oacute;n Acad&eacute;mica y Legal</span>
+                <h2 class="text-xl sm:text-2xl font-black text-[#0b3d23]">Bibliograf&iacute;a Consultada &amp; Normativa Internacional</h2>
+              </div>
+              <span class="text-xs font-bold px-3 py-1 bg-slate-100 text-slate-800 rounded-full">Formato IEEE / APA</span>
+            </div>
+            <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm text-xs space-y-3 max-h-[60vh] overflow-y-auto pr-2">
+              <div class="p-2.5 bg-slate-50 rounded-xl border border-slate-100">
+                <strong class="text-[#0b3d23] block text-xs">[1] Egyptian Process Safety Management Steering Committee (EGPC) (2022).</strong>
+                <span class="text-slate-600"><em>Hazard Identification (HAZID) Guideline</em>, Doc. No. EGPC-PSM-GL-001, Rev. 0. Egyptian General Petroleum Corporation / Methanex Egypt PSM Project.</span>
+              </div>
+              <div class="p-2.5 bg-slate-50 rounded-xl border border-slate-100">
+                <strong class="text-[#0b3d23] block text-xs">[2] Center for Chemical Process Safety (CCPS) (2020).</strong>
+                <span class="text-slate-600"><em>Inherently Safer Chemical Processes: A Life Cycle Approach</em> (3rd ed.). American Institute of Chemical Engineers (AIChE) &amp; John Wiley &amp; Sons.</span>
+              </div>
+              <div class="p-2.5 bg-slate-50 rounded-xl border border-slate-100">
+                <strong class="text-[#0b3d23] block text-xs">[3] Amyotte, P. R. (2021).</strong>
+                <span class="text-slate-600">An introduction to inherently safer design. <em>The Canadian Journal of Chemical Engineering</em>, 99(1), S19&ndash;S28.</span>
+              </div>
+              <div class="p-2.5 bg-slate-50 rounded-xl border border-slate-100">
+                <strong class="text-[#0b3d23] block text-xs">[4] Kletz, T. A. (1998).</strong>
+                <span class="text-slate-600"><em>Process Plants: A Handbook for Inherently Safer Design</em> (2nd ed.). CRC Press / Taylor &amp; Francis Group.</span>
+              </div>
+              <div class="p-2.5 bg-slate-50 rounded-xl border border-slate-100">
+                <strong class="text-[#0b3d23] block text-xs">[5] Davenport, W. G., &amp; King, M. J. (2006).</strong>
+                <span class="text-slate-600"><em>Sulfuric Acid Manufacture: Analysis, Control and Optimization</em>. Elsevier Science &amp; Technology.</span>
+              </div>
+              <div class="p-2.5 bg-slate-50 rounded-xl border border-slate-100">
+                <strong class="text-[#0b3d23] block text-xs">[6] International Electrotechnical Commission (IEC) (2016).</strong>
+                <span class="text-slate-600"><em>Functional Safety &ndash; Safety Instrumented Systems for the Process Industry Sector</em>, IEC 61511:2016 / ISA 84.00.01. Geneva, Switzerland.</span>
+              </div>
+              <div class="p-2.5 bg-slate-50 rounded-xl border border-slate-100">
+                <strong class="text-[#0b3d23] block text-xs">[7] International Organization for Standardization (ISO) (2018).</strong>
+                <span class="text-slate-600"><em>Analysis Techniques for System Reliability &ndash; Procedure for Failure Mode and Effects Analysis (FMEA)</em>, IEC/ISO 60812:2018.</span>
+              </div>
+              <div class="p-2.5 bg-slate-50 rounded-xl border border-slate-100">
+                <strong class="text-[#0b3d23] block text-xs">[8] International Society of Automation (ISA) (2016).</strong>
+                <span class="text-slate-600"><em>Management of Alarm Systems for the Process Industries</em>, ANSI/ISA-18.2-2016. Research Triangle Park, NC.</span>
+              </div>
+              <div class="p-2.5 bg-slate-50 rounded-xl border border-slate-100">
+                <strong class="text-[#0b3d23] block text-xs">[9] Ab Rahim, M. S., et al. (2024).</strong>
+                <span class="text-slate-600">Risk assessment methods for process safety: A review of recent advances. <em>Journal of Loss Prevention in the Process Industries</em>, 88, 105274.</span>
+              </div>
+              <div class="p-2.5 bg-slate-50 rounded-xl border border-slate-100">
+                <strong class="text-[#0b3d23] block text-xs">[10] Nuberg EPC (2022).</strong>
+                <span class="text-slate-600"><em>Technical Project Documentation &amp; P&amp;ID &ndash; 500 TPD Sulfuric Acid Plant (Sprea Misr, Ramadan City, Egypt)</em>. Double Contact Double Absorption Technology.</span>
               </div>
             </div>
           </div>
@@ -688,8 +807,8 @@
       navIndexList.innerHTML = "";
       slides.forEach((slide, idx) => {
         const item = document.createElement("button");
-        item.className = `w-full text-left px-3 py-2.5 rounded-xl text-xs font-semibold transition-colors flex items-center justify-between ${idx === currentSlide ? "bg-[#0b3d23] text-white font-bold" : "text-slate-600 hover:bg-slate-100"}`;
-        item.innerHTML = `<div class="flex items-center space-x-2"><span class="w-5 h-5 rounded-full ${idx === currentSlide ? "bg-[#e5a93b] text-[#0b3d23]" : "bg-slate-200 text-slate-700"} flex items-center justify-center text-[10px] font-bold">${idx + 1}</span><span>${slide.title}</span></div>${idx === currentSlide ? "<span class=\"text-[#e5a93b] text-xs\">&bull;</span>" : ""}`;
+        item.className = `w-full text-left px-3 py-2 rounded-xl text-xs font-semibold transition-colors flex items-center justify-between ${idx === currentSlide ? "bg-[#0b3d23] text-white font-bold" : "text-slate-600 hover:bg-slate-100"}`;
+        item.innerHTML = `<div class="flex items-center space-x-2"><span class="w-5 h-5 rounded-full ${idx === currentSlide ? "bg-[#e5a93b] text-[#0b3d23]" : "bg-slate-200 text-slate-700"} flex items-center justify-center text-[10px] font-bold">${idx + 1}</span><span class="truncate">${slide.title}</span></div>${idx === currentSlide ? "<span class=\"text-[#e5a93b] text-xs\">&bull;</span>" : ""}`;
         item.addEventListener("click", () => { goToSlide(idx); closeDrawer(); });
         navIndexList.appendChild(item);
       });
